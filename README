@@ -1,0 +1,9 @@
+EPiServer Module Project
+
+Small project I use as a starting point to create EPiServer Modules that can be simply used to plug into an existing install of EPiServer.
+
+Project includes (to make life somewhat easier): 
+
+- PageType Builder
+- SubSonic 
+
