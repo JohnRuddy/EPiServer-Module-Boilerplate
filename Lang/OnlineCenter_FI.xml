@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="suomi" id="fi">
+    <enums>
+      <episerver>
+        <personalization>
+          <visitorgroups>
+            <criteria>
+              <comparisontype>
+                <equal>On yhtä kuin</equal>
+                <less>Pienempi kuin</less>
+                <more>Suurempi kuin</more>
+              </comparisontype>
+              <distanceunit>
+                <kilometers>Kilometrit</kilometers>
+                <miles>Mailit</miles>
+              </distanceunit>
+              <matchstringtype>
+                <contains>Sisältää</contains>
+                <endswith>Loppuu merkkijonoon</endswith>
+                <equals>On yhtä kuin</equals>
+                <startswith>Alkaa merkkijonolla</startswith>
+              </matchstringtype>
+              <referrertype>
+                <hostname>Isäntänimi</hostname>
+                <url>URL</url>
+              </referrertype>
+              <timeframe>
+                <since>Lähtien</since>
+                <total>Yhteensä</total>
+                <within>Sisällä</within>
+              </timeframe>
+              <timeperiod>
+                <day>Päivää</day>
+                <month>Kuukausi (30 päivää)</month>
+                <week>Viikot</week>
+                <year>Vuodet</year>
+              </timeperiod>
+              <visitorgroupmembershipstatus>
+                <member>Jäsen kohteessa</member>
+                <notmember>Ei ole jäsen kohteessa</notmember>
+              </visitorgroupmembershipstatus>
+            </criteria>
+            <matchstringtype>
+              <contains>Sisältää</contains>
+              <endswith>Loppuu merkkijonoon</endswith>
+              <equals>On yhtä kuin</equals>
+              <startswith>Alkaa merkkijonolla</startswith>
+            </matchstringtype>
+          </visitorgroups>
+        </personalization>
+      </episerver>
+    </enums>
+    <reportcenter>
+      <report name="linkstatus">
+        <caption>Linkin tila</caption>
+        <description>Näyttää sivuston sisällön linkit, jotka eivät toimi.</description>
+        <heading>Linkin tila</heading>
+        <info>Tässä raportissa näkyvät sivuston sisällön linkit, jotka eivät toimi. Avaa sivu muokkaustilaan valitsemalla se raporttituloksista.</info>
+      </report>
+    </reportcenter>
+    <shell>
+      <cms>
+        <brokenlinks>
+          <controller>
+            <tooltip>Sivun tyyppi: {0}, sivun tunnus: {1}</tooltip>
+            <webExceptions>
+              <fallback>Yhteysvirhe</fallback>
+              <status name="1">
+                <fallback>Nimen selvitys epäonnistui</fallback>
+              </status>
+              <status name="2">
+                <fallback>Yhteys epäonnistui</fallback>
+              </status>
+              <status name="7">
+                <fallback>Palvelimen virhe</fallback>
+                <httpStatus name="400">Virheellinen pyyntö</httpStatus>
+                <httpStatus name="404">Ei löydy</httpStatus>
+                <httpStatus name="503">Yhdyskäytävän aikakatkaisu</httpStatus>
+              </status>
+            </webExceptions>
+          </controller>
+          <index>
+            <info>Raportissa näkyvät linkit, joihin ei saatu yhteyttä. Tämä voi johtua esimerkiksi siitä, että sivua siirrettiin, sivusto oli poissa käytöstä tai kohdelinkin luku ei onnistunut kyseisellä hetkellä.</info>
+            <itemsperpage>Kohteita sivulla</itemsperpage>
+            <name>Linkin tila</name>
+            <recheck>Tarkista uudelleen</recheck>
+            <showreport>Näytä raportti</showreport>
+            <table>
+              <brokensince>Katkaistu alkaen</brokensince>
+              <brokenurl>Katkaistu URL-osoite</brokenurl>
+              <lastchecked>Viimeksi tarkistettu</lastchecked>
+              <linkstatus>Linkin tila</linkstatus>
+              <pagename>Sivun nimi</pagename>
+            </table>
+            <working>Käsitellään...</working>
+          </index>
+        </brokenlinks>
+        <directoryselector>
+          <directorylisting>
+            <directorytype>Hakemisto</directorytype>
+          </directorylisting>
+          <folderselector>
+            <emptyfolder>Tämä kansio on tyhjä.</emptyfolder>
+            <favoritesheading>Suosikit</favoritesheading>
+            <startingpointsheading>Aloituspisteet</startingpointsheading>
+            <wherelabel>Missä</wherelabel>
+          </folderselector>
+          <index>
+            <nameheading>Nimi</nameheading>
+            <sizeheading>Koko</sizeheading>
+            <typeheading>Tyyppi</typeheading>
+          </index>
+        </directoryselector>
+        <errordialog>
+          <description>Sivu ei mahdollisesti toimi kunnolla ennen kuin se on ladattu uudelleen. Napsauta painiketta ladataksesi sivun uudelleen nyt.</description>
+          <heading>Taustalla tehdyssä pyynnössä tapahtui käsittelemätön virhe.</heading>
+          <reloadtext>Lataa uudelleen</reloadtext>
+          <title>Taustalla tehty pyyntö epäonnistui.</title>
+        </errordialog>
+        <externallinks>
+          <common>
+            <hits>Linkkien määrä</hits>
+            <host>Web-osoite</host>
+          </common>
+          <details>
+            <link>Web-osoite</link>
+            <page>Sivu</page>
+          </details>
+          <errors>
+            <pagenumber>Sivun numeron on oltava positiivinen</pagenumber>
+            <pagesize>Sivun koon on oltava positiivinen</pagesize>
+          </errors>
+          <gadgettitle>Ulkoiset linkit</gadgettitle>
+          <pager>
+            <info>Kohteet: {0} - {1} / {2}</info>
+            <next>&gt;&gt;</next>
+            <prev>&lt;&lt;</prev>
+            <split>...</split>
+          </pager>
+          <settings>
+            <legend>Asetukset</legend>
+            <pagesize>Näytettävien kohteiden määrä</pagesize>
+            <showdetails>Näytä tiedot</showdetails>
+          </settings>
+        </externallinks>
+        <hosting>
+          <fileupload>
+            <conflictingdirectory>Uuden tiedoston nimeä vastaava kansio on jo olemassa.</conflictingdirectory>
+            <fileexists>Saman niminen tiedosto on jo olemassa, eivätkä oikeutesi riitä olemassa olevan tiedoston korvaamiseen</fileexists>
+            <fileisnotimage>Valittu tiedosto ei ole kuva.</fileisnotimage>
+            <fileoverwriteconfirmation>Saman niminen tiedosto on jo olemassa. Haluatko korvata olemassa olevan tiedoston?</fileoverwriteconfirmation>
+            <invaliddirectory>Valittua lataushakemistoa ei ole.</invaliddirectory>
+            <permissiondenied>Oikeutesi eivät riitä tiedostojen lataamiseen valittuun kansioon</permissiondenied>
+            <targetfilecheckedout>Saman niminen tiedosto on jo olemassa, ja toinen käyttäjä on kuitannut sen ulos</targetfilecheckedout>
+          </fileupload>
+        </hosting>
+        <menu>
+          <admin>Hallintatila</admin>
+          <cms>CMS</cms>
+          <cmssettings>EPiServer CMS</cmssettings>
+          <edit>Muokkaustila</edit>
+          <license>Käyttöoikeussopimus</license>
+          <logout>Kirjaudu ulos</logout>
+          <mysettings>Omat asetukset</mysettings>
+          <reportcenter>Raportit</reportcenter>
+          <selectasite>Valitse näyttötilassa näytettävä sivusto</selectasite>
+          <toviewmode>Näyttötilaan [{0}]</toviewmode>
+        </menu>
+        <mytasks>
+          <assignedto>Vastuuhenkilö</assignedto>
+          <createnewtask>Luo muokkaustilassa</createnewtask>
+          <createnewtasktitle>Luo tehtävä muokkaustilasta</createnewtasktitle>
+          <description>Kuvaus</description>
+          <duedate>Eräpäivä</duedate>
+          <EmptySubjectWarning>Tehtävän aihe on tyhjä</EmptySubjectWarning>
+          <errors>
+            <settingsusergroupnames>Määritä oikeat käyttäjäryhmien nimet.</settingsusergroupnames>
+          </errors>
+          <IncorrectTaskStatusWarning>Määritetty tila ei kelpaa tehtävälle</IncorrectTaskStatusWarning>
+          <InvalidDueDate>Tehtävän eräpäivä ei kelpaa</InvalidDueDate>
+          <legend>Lisää tehtävä</legend>
+          <mygroups>Omat ryhmät (pilkulla erotettuina)</mygroups>
+          <pagetasks>Sivun tehtävät</pagetasks>
+          <quickadd>Pikalisäys</quickadd>
+          <quickaddtitle>Luo tehtävä käyttöpaneelista</quickaddtitle>
+          <settingsheading>Asetukset</settingsheading>
+          <status>Tila</status>
+          <subject>Aihe</subject>
+          <title>Omat tehtävät</title>
+          <tooltip>
+            <created>Luotu</created>
+            <pageid>Sivun tunnus</pageid>
+            <pagepath>Polku</pagepath>
+          </tooltip>
+          <UnknownUserWarning>Määritettyä käyttäjää ei löydy</UnknownUserWarning>
+        </mytasks>
+        <notchangedpages>
+          <errors>
+            <monthswithoutchanges>Kuukausien määrän on oltava nollaa suurempi kokonaisluku.</monthswithoutchanges>
+            <numberofitems>Kohteiden määrän on oltava nollaa suurempi kokonaisluku.</numberofitems>
+          </errors>
+          <gadgettitle>Muuttamattomat sivut</gadgettitle>
+          <indexview>
+            <changedby>Muuttanut</changedby>
+            <modified>Muutettu</modified>
+            <name>Nimi</name>
+            <status>Tila</status>
+          </indexview>
+          <settingsview>
+            <invertsorting>Lajittele laskevasti</invertsorting>
+            <legend>Asetukset</legend>
+            <monthswithoutchanges>Kuukausien määrä</monthswithoutchanges>
+            <numberofitems>Näytettävien kohteiden määrä</numberofitems>
+          </settingsview>
+        </notchangedpages>
+        <notesgadget>
+          <backgroundcolor>Taustaväri</backgroundcolor>
+          <backgroundcolors>
+            <blue>Sininen</blue>
+            <green>Vihreä</green>
+            <orange>Oranssi</orange>
+            <pink>Vaaleanpunainen</pink>
+            <white>Valkoinen</white>
+            <yellow>Keltainen</yellow>
+          </backgroundcolors>
+          <textsize>Tekstin koko</textsize>
+          <textsizes>
+            <big>Suuri</big>
+            <normal>Normaali</normal>
+            <verybig>Suurin</verybig>
+          </textsizes>
+          <title>Huomautukset</title>
+        </notesgadget>
+        <pageinfo>
+          <modifiedby>Muuttanut</modifiedby>
+          <modifieddate>Muutettu</modifieddate>
+          <pagelink>Tunnus</pagelink>
+          <pagetype>Sivun tyyppi</pagetype>
+          <path>Polku</path>
+        </pageinfo>
+        <quicklinks>
+          <addlink>Lisää linkki</addlink>
+          <cmsedit>
+            <text>Muokkaa</text>
+            <tooltip>Avaa CMS:n muokkaustila</tooltip>
+          </cmsedit>
+          <cmslinkcategoryname>CMS</cmslinkcategoryname>
+          <contentguidecategoryname>Pikajulkaisu</contentguidecategoryname>
+          <deletelink>Poista linkki</deletelink>
+          <episerverworldforum>
+            <text>EPiServer World -foorumi</text>
+            <tooltip>Foorumi EPiServer Worldissa</tooltip>
+          </episerverworldforum>
+          <linktitle>Otsikko</linktitle>
+          <linkurl>Web-osoite</linkurl>
+          <managelinks>Hallitse linkkejä</managelinks>
+          <mylinkscategoryname>Omat linkit</mylinkscategoryname>
+          <nocategory>Ei luokkaa</nocategory>
+          <title>Pikalinkit</title>
+        </quicklinks>
+        <recentlychangedpages>
+          <common>
+            <byall>Kaikki muutokset</byall>
+            <byme>Omat muutokset</byme>
+            <heading>Viimeksi muutetut sivut</heading>
+          </common>
+          <configure>
+            <defaultview>Oletusnäkymä</defaultview>
+            <heading>Asetukset</heading>
+            <numberofitems>Näytettävien kohteiden määrä</numberofitems>
+          </configure>
+          <index>
+            <changedby>Muuttanut</changedby>
+            <modified>Tallennettu</modified>
+            <name>Nimi</name>
+            <status>Tila</status>
+          </index>
+          <rss>
+            <description>Nämä ovat viimeksi muutetut sivut sivustossa {0}</description>
+          </rss>
+        </recentlychangedpages>
+        <rssgadget>
+          <errors>
+            <invalidfeed>Syötettä ei voitu lukea, koska kohteesta {0} saadussa syötesisällössä oli XML-virhe.</invalidfeed>
+            <invaliditemstoshow>Näytettävien kohteiden määrän on oltava positiivinen kokonaisluku.</invaliditemstoshow>
+            <invaliduri>Virheellinen Web-osoite. Web-osoitteen on oltava absoluuttinen URL, jonka alussa on http:// tai https://.</invaliduri>
+            <notafeed>Web-osoitteessa [{0}] ei ole kelvollista RSS- tai Atom-syötettä.</notafeed>
+          </errors>
+          <loadingfeedmessage>Ladataan syöte...</loadingfeedmessage>
+          <settings>
+            <feedurl>Syötteen URL</feedurl>
+            <itemstoshow>Näytettävät kohteet</itemstoshow>
+            <loadfeedtitle>Hae otsikko syötteestä</loadfeedtitle>
+            <title>Otsikko</title>
+          </settings>
+          <title>RSS-syötteen luku</title>
+        </rssgadget>
+        <search>
+          <files>
+            <category>Tiedostot</category>
+          </files>
+          <pages>
+            <category>Sivut</category>
+            <id>ID</id>
+            <linkurl>Link URL</linkurl>
+            <tooltip>
+              <changed>Muutettu</changed>
+              <created>Luotu</created>
+              <id>Tunnus</id>
+              <linkurl>Linkin Url-osoite</linkurl>
+              <pagetype>Sivun tyyppi</pagetype>
+            </tooltip>
+          </pages>
+        </search>
+        <uploadfile>
+          <controller>
+            <noresize>Älä muuta kokoa</noresize>
+          </controller>
+          <index>
+            <alttextlabel>Vaihtoehtoinen teksti</alttextlabel>
+            <imagelegend>Kuva</imagelegend>
+            <imagesizelabel>Muuta kuvan kokoa</imagesizelabel>
+            <savetolegend>Tallenna kohteeseen</savetolegend>
+            <selectlabel>Valitse tiedosto</selectlabel>
+            <uploadbutton>Lataa ja lisää</uploadbutton>
+          </index>
+        </uploadfile>
+        <visitorgroups>
+          <criteria>
+            <categories>
+              <categories>Luokat</categories>
+              <category>Sivuston ehdot</category>
+              <categorylabel>Luokka:</categorylabel>
+              <description>Täsmää aika, jolloin vierailija vieraili sivulla, joka kuuluu määritettyyn luokkaan.</description>
+              <displayname>Luokka, jossa vieraillaan</displayname>
+              <numberofpageviewslabel>Näytetty ainakin</numberofpageviewslabel>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <totalcountlabel>sivua kokonaimäärästä</totalcountlabel>
+            </categories>
+            <geographiccoordinate>
+              <category>Ajan ja paikan ehdot</category>
+              <coordinatepicker>Valitse maantieteelliset koordinaatit</coordinatepicker>
+              <description>Täsmää vierailijan sijainti valittuihin maantieteellisiin koordinaatteihin.</description>
+              <displayname>Maantieteelliset koordinaatit</displayname>
+              <googlemapsterms>
+                <accepttext>Hyväksy Google Maps API -käyttöehdot käyttääksesi tätä toiminnallisuutta.</accepttext>
+                <agreecheckbox>Hyväksyn käyttöehdot</agreecheckbox>
+                <customurltext>Jos sinulla on räätälöity URL-osoite Google Maps API:iin (kuten Google Maps API Premier -tili), aseta määrityksien siteSetting-kohdassa ominaisuus googleMapsApiV3Url vastaavasti.</customurltext>
+                <reviewlink>Lue Google Maps API -käyttöehdot</reviewlink>
+                <thankyoutext>Kiitos. Nyt voit käyttää sijainnin valinnan toiminnallisuutta.</thankyoutext>
+                <title>Google Maps API -käyttöehdot</title>
+              </googlemapsterms>
+              <latitude>Leveysaste: </latitude>
+              <location>Sijainti: </location>
+              <longitude>Pituusaste: </longitude>
+              <radius>Säde: </radius>
+              <selectlocation>Valitse sijainti</selectlocation>
+            </geographiccoordinate>
+            <geographiclocation>
+              <anylocation>Mikä tahansa</anylocation>
+              <category>Ajan ja paikan ehdot</category>
+              <continent>Maanosa</continent>
+              <continents>
+                <AF>Afrikka</AF>
+                <AN>Etelämanner</AN>
+                <AS>Aasia</AS>
+                <EU>Eurooppa</EU>
+                <NA>Pohjois-Amerikka</NA>
+                <OC>Oseania</OC>
+                <SA>Etelä-Amerikka</SA>
+              </continents>
+              <countries>
+                <!-- Exceptional reservations in the ISO 3166 standard-->
+                <AD>Andorra</AD>
+                <AE>Yhdistyneet arabiemiirikunnat</AE>
+                <AF>Afganistan</AF>
+                <AG>Antigua ja Barbuda</AG>
+                <AI>Anguilla</AI>
+                <AL>Albania</AL>
+                <AM>Armenia</AM>
+                <AN>Alankomaiden Antillit</AN>
+                <AO>Angola</AO>
+                <AQ>Etelämanner</AQ>
+                <AR>Argentiina</AR>
+                <AS>Amerikan Samoa</AS>
+                <AT>Itävalta</AT>
+                <AU>Australia</AU>
+                <AW>Aruba</AW>
+                <AX>Ahvenanmaan saaristo</AX>
+                <AZ>Azerbaidžan</AZ>
+                <BA>Bosnia ja Hertsegovina</BA>
+                <BB>Barbados</BB>
+                <BD>Bangladesh</BD>
+                <BE>Belgia</BE>
+                <BF>Burkina Faso</BF>
+                <BG>Bulgaria</BG>
+                <BH>Bahrain</BH>
+                <BI>Burundi</BI>
+                <BJ>Benin</BJ>
+                <BL>Saint Barthélemy</BL>
+                <BM>Bermuda</BM>
+                <BN>Brunei</BN>
+                <BO>Bolivian monikansainen valtio</BO>
+                <BR>Brasilia</BR>
+                <BS>Bahama</BS>
+                <BT>Bhutan</BT>
+                <BV>Bouvet'nsaari</BV>
+                <BW>Botswana</BW>
+                <BY>Valko-Venäjä</BY>
+                <BZ>Belize</BZ>
+                <CA>Kanada</CA>
+                <CC>Kookossaaret</CC>
+                <CD>Kongon demokraattinen tasavalta</CD>
+                <CF>Keski-Afrikan tasavalta</CF>
+                <CG>Kongo</CG>
+                <CH>Sveitsi</CH>
+                <CI>Norsunluurannikko</CI>
+                <CK>Cookinsaaret</CK>
+                <CL>Chile</CL>
+                <CM>Kamerun</CM>
+                <CN>Kiina</CN>
+                <CO>Kolumbia</CO>
+                <CR>Costa Rica</CR>
+                <CU>Kuuba</CU>
+                <CV>Kap Verde</CV>
+                <CX>Joulusaari</CX>
+                <CY>Kypros</CY>
+                <CZ>Tšekin tasavalta</CZ>
+                <DE>Saksa</DE>
+                <DJ>Djibouti</DJ>
+                <DK>Tanska</DK>
+                <DM>Dominica</DM>
+                <DO>Dominikaaninen tasavalta</DO>
+                <DZ>Algeria</DZ>
+                <EC>Ecuador</EC>
+                <EE>Viro</EE>
+                <EG>Egypti</EG>
+                <EH>Länsi-Sahara</EH>
+                <ER>Eritrea</ER>
+                <ES>Espanja</ES>
+                <ET>Etiopia</ET>
+                <FI>Suomi</FI>
+                <FJ>Fidži</FJ>
+                <FK>Falklandinsaaret</FK>
+                <FM>Mikronesian liittovaltio</FM>
+                <FO>Färsaaret</FO>
+                <FR>Ranska</FR>
+                <FX>Ranska</FX>
+                <GA>Gabon</GA>
+                <GB>Yhdistynyt kuningaskunta</GB>
+                <GD>Grenada</GD>
+                <GE>Georgia</GE>
+                <GF>Ranskan Guayana</GF>
+                <GG>Guernsey</GG>
+                <GH>Ghana</GH>
+                <GI>Gibraltar</GI>
+                <GL>Grönlanti</GL>
+                <GM>Gambia</GM>
+                <GN>Guinea</GN>
+                <GP>Guadeloupe</GP>
+                <GQ>Päiväntasaajan Guinea</GQ>
+                <GR>Kreikka</GR>
+                <GS>Etelä-Georgia ja Eteläiset Sandwichsaaret</GS>
+                <GT>Guatemala</GT>
+                <GU>Guam</GU>
+                <GW>Guinea-Bissau</GW>
+                <GY>Guyana</GY>
+                <HK>Hongkong</HK>
+                <HM>Heard ja McDonaldinsaaret</HM>
+                <HN>Honduras</HN>
+                <HR>Kroatia</HR>
+                <HT>Haiti</HT>
+                <HU>Unkari</HU>
+                <ID>Indonesia</ID>
+                <IE>Irlanti</IE>
+                <IL>Israel</IL>
+                <IM>Mansaari</IM>
+                <IN>Intia</IN>
+                <IO>Brittiläinen Intian valtameren alue</IO>
+                <IQ>Irak</IQ>
+                <IR>Iranin islamilainen tasavalta</IR>
+                <IS>Islanti</IS>
+                <IT>Italia</IT>
+                <JE>Jersey</JE>
+                <JM>Jamaika</JM>
+                <JO>Jordania</JO>
+                <JP>Japani</JP>
+                <KE>Kenia</KE>
+                <KG>Kirgisia</KG>
+                <KH>Kambodža</KH>
+                <KI>Kiribati</KI>
+                <KM>Komorit</KM>
+                <KN>Saint Kitts ja Nevis</KN>
+                <KP>Korean demokraattinen kansantasavalta</KP>
+                <KR>Korean tasavalta</KR>
+                <KW>Kuwait</KW>
+                <KY>Caymansaaret</KY>
+                <KZ>Kazakstan</KZ>
+                <LA>Laosin demokraattinen kansantasavalta</LA>
+                <LB>Libanon</LB>
+                <LC>Saint Lucia</LC>
+                <LI>Liechtenstein</LI>
+                <LK>Sri Lanka</LK>
+                <LR>Liberia</LR>
+                <LS>Lesotho</LS>
+                <LT>Liettua</LT>
+                <LU>Luxemburg</LU>
+                <LV>Latvia</LV>
+                <LY>Libya</LY>
+                <MA>Marokko</MA>
+                <MC>Monaco</MC>
+                <MD>Moldovan tasavalta</MD>
+                <ME>Montenegro</ME>
+                <MF>Saint Martin</MF>
+                <MG>Madagaskar</MG>
+                <MH>Marshallinsaaret</MH>
+                <MK>Makedonia</MK>
+                <ML>Mali</ML>
+                <MM>Myanmar</MM>
+                <MN>Mongolia</MN>
+                <MO>Macao</MO>
+                <MP>Pohjois-Mariaanit</MP>
+                <MQ>Martinique</MQ>
+                <MR>Mauritania</MR>
+                <MS>Montserrat</MS>
+                <MT>Malta</MT>
+                <MU>Mauritius</MU>
+                <MV>Malediivit</MV>
+                <MW>Malawi</MW>
+                <MX>Meksiko</MX>
+                <MY>Malesia</MY>
+                <MZ>Mosambik</MZ>
+                <NA>Namibia</NA>
+                <NC>Uusi-Kaledonia</NC>
+                <NE>Nigeria</NE>
+                <NF>Norfolkinsaari</NF>
+                <NG>Nigeria</NG>
+                <NI>Nicaragua</NI>
+                <NL>Alankomaat</NL>
+                <NO>Norja</NO>
+                <NP>Nepali</NP>
+                <NR>Nauru</NR>
+                <NU>Niue</NU>
+                <NZ>Uusi-Seelanti</NZ>
+                <OM>Oman</OM>
+                <PA>Panama</PA>
+                <PE>Peru</PE>
+                <PF>Ranskan Polynesia</PF>
+                <PG>Papua-Uusi-Guinea</PG>
+                <PH>Filippiinit</PH>
+                <PK>Pakistan</PK>
+                <PL>Puola</PL>
+                <PM>Saint Pierre ja Miquelon</PM>
+                <PN>Pitcairn</PN>
+                <PR>Puerto Rico</PR>
+                <PS>Palestiina</PS>
+                <PT>Portugali</PT>
+                <PW>Palau</PW>
+                <PY>Paraguay</PY>
+                <QA>Qatar</QA>
+                <RE>Réunion</RE>
+                <RO>Romania</RO>
+                <RS>Serbia</RS>
+                <RU>Venäjä</RU>
+                <RW>Ruanda</RW>
+                <SA>Saudi-Arabia</SA>
+                <SB>Salomonsaaret</SB>
+                <SC>Seychellit</SC>
+                <SD>Sudan</SD>
+                <SE>Ruotsi</SE>
+                <SG>Singapore</SG>
+                <SH>Saint Helena, Ascension ja Tristan Da Cunha</SH>
+                <SI>Slovenia</SI>
+                <SJ>Huippuvuoret ja Jan Mayen</SJ>
+                <SK>Slovakia</SK>
+                <SL>Sierra Leone</SL>
+                <SM>San Marino</SM>
+                <SN>Senegal</SN>
+                <SO>Somalia</SO>
+                <SR>Suriname</SR>
+                <ST>Sao Tome ja Principe</ST>
+                <SV>El Salvador</SV>
+                <SY>Syyrian arabitasavalta</SY>
+                <SZ>Swazimaa</SZ>
+                <TC>Turks- ja Caicossaaret</TC>
+                <TD>Tšad</TD>
+                <TF>Ranskan eteläiset ja antarktiset alueet</TF>
+                <TG>Togo</TG>
+                <TH>Thaimaa</TH>
+                <TJ>Tadžikistan</TJ>
+                <TK>Tokelau</TK>
+                <TL>Itä-Timor</TL>
+                <TM>Turkmenistan</TM>
+                <TN>Tunisia</TN>
+                <TO>Tonga</TO>
+                <TR>Turkki</TR>
+                <TT>Trinidad ja Tobago</TT>
+                <TV>Tuvalu</TV>
+                <TW>Taiwan</TW>
+                <TZ>Tansania</TZ>
+                <UA>Ukraina</UA>
+                <UG>Uganda</UG>
+                <UM>Yhdysvaltain pienet erillissaaret</UM>
+                <US>Yhdysvallat</US>
+                <UY>Uruguay</UY>
+                <UZ>Uzbekistan</UZ>
+                <VA>Vatikaanivaltio</VA>
+                <VC>Saint Vincent ja Grenadiinit</VC>
+                <VE>Venezuela</VE>
+                <WF>Wallis ja Futuna</WF>
+                <VG>Neitsytsaaret, Brittiläiset</VG>
+                <VI>Neitsytsaaret, Yhdysvaltain</VI>
+                <VN>Vietnam</VN>
+                <WS>Samoa</WS>
+                <VU>Vanuatu</VU>
+                <YE>Jemen</YE>
+                <YT>Mayotte</YT>
+                <ZA>Etelä-Afrikka</ZA>
+                <ZM>Sambia</ZM>
+                <ZW>Zimbabwe</ZW>
+              </countries>
+              <country>Maa</country>
+              <description>Täsmää vierailijan sijainti määritettyyn maantieteelliseen sijaintiin.</description>
+              <displayname>Maantieteellinen sijainti</displayname>
+              <mustselectcontinent>Valitse maanosa</mustselectcontinent>
+              <region>Alue</region>
+            </geographiclocation>
+            <numberofvisits>
+              <category>Sivuston ehdot</category>
+              <comparison>Vertailun tyyppi</comparison>
+              <description>Täsmää vierailijan vierailujen määrä sivustolla.</description>
+              <displayname>Vierailujen määrä</displayname>
+              <fixtime>Päivämäärä</fixtime>
+              <floattime>Aikaväli</floattime>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <threshold>Kynnysarvo</threshold>
+              <thresholdtolargewarning>Et voi verrata enempää kuin kymmentä vierailua tietyllä aikavälillä, koska kaikilta vierailijoilta tallennetaan vain kymmenen viimeistä vierailua.</thresholdtolargewarning>
+              <timeframe>Aikarajat</timeframe>
+            </numberofvisits>
+            <referrer>
+              <category>URL-osoitteen ehdot</category>
+              <description>Täsmää viittaava URL-osoite määritellyn merkkijonon kanssa.</description>
+              <displayname>Viittaaja</displayname>
+            </referrer>
+            <required>Valitse arvo.</required>
+            <searchwordreferrer>
+              <category>URL-osoitteen ehdot</category>
+              <description>Täsmää hakusanat määritellyn merkkijonon kanssa.</description>
+              <displayname>Haun avainsana</displayname>
+            </searchwordreferrer>
+            <starturl>
+              <category>URL-osoitteen ehdot</category>
+              <description>Täsmää URL-osoite siihen URL-osoitteeseen, johon vierailija ensimmäiseksi sivustossa siirtyi.</description>
+              <displayname>Ensimmäinen URL-osoite</displayname>
+              <url>URL-osoite: </url>
+            </starturl>
+            <timeofday>
+              <bothornonetime>Aseta sekä aloitus- että lopetusaika tai jätä molemmat tyhjiksi.</bothornonetime>
+              <category>Ajan ja paikan ehdot</category>
+              <daysofweek>Viikonpäivä</daysofweek>
+              <description>Täsmää määritetty aikaväli ja viikonpäivä.</description>
+              <displayname>Aika päivästä</displayname>
+              <endtime>Mihin:</endtime>
+              <friday>Perjantai</friday>
+              <monday>Maanantai</monday>
+              <nodayofweekselected>Valitse ainakin yksi päivä.</nodayofweekselected>
+              <saturday>Lauantai</saturday>
+              <starttime>Mistä:</starttime>
+              <starttimeafterendtime>Muuta aloitusaikaa siten, että se tulee ennen lopetusaikaa.</starttimeafterendtime>
+              <sunday>Sunnuntai</sunday>
+              <thursday>Torstai</thursday>
+              <tuesday>Tiistai</tuesday>
+              <wednesday>Keskiviikko</wednesday>
+            </timeofday>
+            <userprofile>
+              <category>Sivuston ehdot</category>
+              <description>Täsmää johonkin käyttäjäprofiilin ominaisuuden määriteltyyn arvoon.</description>
+              <displayname>Käyttäjäprofiili</displayname>
+              <key>
+                <address>Osoite</address>
+                <company>Yritys</company>
+                <email>Sähköpostiosoite</email>
+                <firstname>Etunimi</firstname>
+                <lastname>Sukunimi</lastname>
+                <title>Otsikko</title>
+              </key>
+              <required>Valitse arvo.</required>
+            </userprofile>
+            <viewedpages>
+              <category>Sivuston ehdot</category>
+              <description>Täsmää aika, jolloin vierailija vieraili tietyllä sivulla.</description>
+              <displayname>Sivu, jossa vierailtiin</displayname>
+              <notvalidpagereference>Valittua sivua ei löydy</notvalidpagereference>
+            </viewedpages>
+            <visitorgroup>
+              <category>Vierailijaryhmät</category>
+              <description>Täsmää jäsenyys olemassa olevaan vierailijaryhmään.</description>
+              <displayname>Vierailijaryhmän jäsenyys</displayname>
+              <foundcirclereference>Valitse eri vierailijaryhmä, koska tähän vierailijaryhmään viittaaminen muodostaisi kehämäisen viittaussuhteen.</foundcirclereference>
+            </visitorgroup>
+          </criteria>
+          <edit>
+            <acceptrenaming>Hyväksy</acceptrenaming>
+            <addtitle>Luo vierailijaryhmä</addtitle>
+            <all>Kaikki</all>
+            <allof>Kaikki seuraavista: </allof>
+            <any>Mikä tahansa</any>
+            <anyof>Mikä tahansa seuraavista: </anyof>
+            <cantchangename>Tätä vierailijaryhmää on mahdollisesti käytetty määrittämään sivujen ja tiedostojen käyttöoikeuksia. Jos muutat sen nimeä, kaikki tälle ryhmälle määritellyt käyttöoikeudet lakkaavat toimimasta.</cantchangename>
+            <category>
+              <default>Oletus</default>
+            </category>
+            <criteria>Ehdot</criteria>
+            <drophint>Pudota uusi ehto tähän</drophint>
+            <edittitle>Muokkaa vierailijaryhmää</edittitle>
+            <generalfields>Muut tiedot</generalfields>
+            <info>Mukauta sivustosi sisältöä luomalla ensin vierailijaryhmät. Käytä tämän jälkeen ryhmiä sivujen sisällön kohdentamiseen.</info>
+            <issecurityrole>Suojausrooli</issecurityrole>
+            <issecurityroledescription>Näytä tämä vierailijaryhmä, kun sivujen ja tiedostojen käyttöoikeuksia määritetään.</issecurityroledescription>
+            <match>Osuma</match>
+            <name>Nimi</name>
+            <notes>Huomautukset</notes>
+            <points>
+              <required>Vaadittu</required>
+              <threshold>Kynnysarvo</threshold>
+              <title>Pisteet</title>
+            </points>
+            <pointsfrom>Ainakin {0} pistettä kohteesta: </pointsfrom>
+            <statistics>Tilastotietoja</statistics>
+            <statisticsdescription>Ota tilastot käyttöön tälle vierailijaryhmälle</statisticsdescription>
+            <typenotfound>Tyyppiä {0} ei voitu ladata.</typenotfound>
+            <undorenaming>Kumoa</undorenaming>
+          </edit>
+          <index>
+            <copy>Kopioi</copy>
+            <info>Vierailijaryhmiä käytetään mukauttamaan sivustosi sisältöä tietylle kohderyhmälle.</info>
+            <name>Vierailijaryhmät</name>
+            <sessionstatewarning>Tätä sivustoa ei ole määritetty käyttämään istunnon tilaa (Session State), joka on edellytys vierailijaryhmien käytölle. Saat lisätietoja järjestelmänvalvojalta.</sessionstatewarning>
+            <table>
+              <action>Toimenpide</action>
+              <actions>
+                <copy>Kaksoiskappale</copy>
+                <delete>Poista</delete>
+                <edit>Muokkaa</edit>
+                <resetstatistics>Tyhjennä tilastot</resetstatistics>
+              </actions>
+              <deleteconfirmation>Haluatko varmasti poistaa tämän vierailijaryhmän?</deleteconfirmation>
+              <name>Nimi</name>
+              <notes>Huomautukset</notes>
+              <resetstatisticsconfirmation>Haluatko varmasti poistaa tämän vierailijaryhmän tilastot?</resetstatisticsconfirmation>
+            </table>
+          </index>
+        </visitorgroups>
+        <xformsviewer>
+          <autoupdatelevel>
+            <never>Ei koskaan</never>
+            <normal>Normaali (joka 10:s minuutti)</normal>
+            <often>Usein (joka 60:s sekunti)</often>
+            <seldom>Harvoin (joka 60:s minuutti)</seldom>
+          </autoupdatelevel>
+          <AutoupdateLevel>Päivitä automaattisesti</AutoupdateLevel>
+          <chartperiodicity>
+            <day>Päivässä</day>
+            <hour>Tunnissa</hour>
+            <minute>Minuutissa</minute>
+            <month>Kuukaudessa</month>
+            <week>Viikossa</week>
+          </chartperiodicity>
+          <ChartPeriodicityLabel>Kaavion aikajakso</ChartPeriodicityLabel>
+          <ChartSettings>Kaavion asetukset</ChartSettings>
+          <DemoMode>Esittelytila</DemoMode>
+          <error>
+            <fields>Kenttiä ei ole valittu</fields>
+            <formfields>Valitse lomakekentät</formfields>
+            <numberofposts>Kohteiden määrän on oltava välillä 1 - 50</numberofposts>
+            <xformid>Valitse lomake</xformid>
+          </error>
+          <GadgetTitle>Lomakkeiden katseluohjelma</GadgetTitle>
+          <NoFieldsAvailable>Ei käytettävissä olevia kenttiä</NoFieldsAvailable>
+          <NoFormsAvailable>Ei käytettävissä olevia lomakkeita</NoFormsAvailable>
+          <NumberOfPosts>Näytettävien kohteiden määrä</NumberOfPosts>
+          <SelectFields>Näytettävät kentät</SelectFields>
+          <SelectXForm>Valitse lomake</SelectXForm>
+          <settings>Asetukset</settings>
+          <ShowChart>Näytä kaavio</ShowChart>
+          <ShowDate>Näytä kohteen lähetyspäivämäärä</ShowDate>
+          <TableColumnPostedTime>Lähetetty</TableColumnPostedTime>
+        </xformsviewer>
+      </cms>
+      <common>
+        <buttons>
+          <cancel>Peruuta</cancel>
+          <save>Tallenna</save>
+        </buttons>
+      </common>
+    </shell>
+  </language>
+</languages>

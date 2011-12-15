@@ -1,0 +1,800 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="Svenska" id="sv">
+    <enums>
+      <episerver>
+        <personalization>
+          <visitorgroups>
+            <criteria>
+              <comparisontype>
+                <equal>Lika med</equal>
+                <less>Mindre än</less>
+                <more>Mer än</more>
+              </comparisontype>
+              <distanceunit>
+                <kilometers>Kilometer</kilometers>
+                <miles>Engelska miles</miles>
+              </distanceunit>
+              <matchstringtype>
+                <contains>Innehåller</contains>
+                <endswith>Slutar med</endswith>
+                <equals>Lika med</equals>
+                <startswith>Börjar med</startswith>
+              </matchstringtype>
+              <referrertype>
+                <hostname>Värdnamn</hostname>
+                <url>URL</url>
+              </referrertype>
+              <timeframe>
+                <since>Sedan</since>
+                <total>Totalt</total>
+                <within>Inom</within>
+              </timeframe>
+              <timeperiod>
+                <day>Dagar</day>
+                <month>Månader (30 dagar)</month>
+                <week>Veckor</week>
+                <year>År</year>
+              </timeperiod>
+              <visitorgroupmembershipstatus>
+                <member>Medlem av</member>
+                <notmember>Ej medlem av</notmember>
+              </visitorgroupmembershipstatus>
+            </criteria>
+            <matchstringtype>
+              <contains>Innehåller</contains>
+              <endswith>Slutar med</endswith>
+              <equals>Lika med</equals>
+              <startswith>Börjar med</startswith>
+            </matchstringtype>
+          </visitorgroups>
+        </personalization>
+      </episerver>
+    </enums>
+    <reportcenter>
+      <report name="linkstatus">
+        <caption>Länkstatus</caption>
+        <description>Visar länkar som inte fungerar i sidors innehåll.</description>
+        <heading>Länkstatus</heading>
+        <info>Den här rapporten visar länkar som inte fungerar i sidors innehåll.
+          Välj en sida i resultatlistan för att öppna den i redigeraläget.</info>
+      </report>
+    </reportcenter>
+    <shell>
+      <cms>
+        <brokenlinks>
+          <controller>
+            <tooltip>Sidtyp: {0}, Sid ID: {1}</tooltip>
+            <webExceptions>
+              <fallback>Anslutningsfel</fallback>
+              <status name="1">
+                <fallback>Hittade inte adressen</fallback>
+              </status>
+              <status name="2">
+                <fallback>Fel vid anslutning</fallback>
+              </status>
+              <status name="7">
+                <fallback>Serverfel</fallback>
+                <httpStatus name="400">Felaktigt anslutningsförsök</httpStatus>
+                <httpStatus name="404">Hittades ej</httpStatus>
+                <httpStatus name="503">Gateway Timeout</httpStatus>
+              </status>
+            </webExceptions>
+          </controller>
+          <index>
+            <info>Denna rapport visar länkar som inte kunde kontaktas. Detta kan till exempel bero på att sidan är flyttad, webbplatsen är nerstängd, eller ett tillfälligt fel.</info>
+            <itemsperpage>Antal länkar per sida</itemsperpage>
+            <name>Brutna länkar</name>
+            <recheck>Uppdatera</recheck>
+            <showreport>Visa rapport</showreport>
+            <table>
+              <brokensince>Trasig sedan</brokensince>
+              <brokenurl>Trasig URL</brokenurl>
+              <lastchecked>Senast kontrollerad</lastchecked>
+              <linkstatus>Länkstatus</linkstatus>
+              <pagename>Sidnamn</pagename>
+            </table>
+            <working>Arbetar...</working>
+          </index>
+        </brokenlinks>
+        <directoryselector>
+          <directorylisting>
+            <directorytype>Katalog</directorytype>
+          </directorylisting>
+          <folderselector>
+            <emptyfolder>Katalogen är tom.</emptyfolder>
+            <favoritesheading>Favoriter</favoritesheading>
+            <startingpointsheading>Startpunkter</startingpointsheading>
+            <wherelabel>Spara till</wherelabel>
+          </folderselector>
+          <index>
+            <nameheading>Namn</nameheading>
+            <sizeheading>Storlek</sizeheading>
+            <typeheading>Typ</typeheading>
+          </index>
+        </directoryselector>
+        <errordialog>
+          <description>Det är möjligt att sidan inte fungerar om den inte laddas om. Klicka på omladdningsknappen nedan för att ladda om sidan.</description>
+          <heading>Ett ohanterat fel har uppstått i en bakgrundshämtning från servern</heading>
+          <reloadtext>Ladda om sidan</reloadtext>
+          <title>En bakgrundshämtning misslyckades</title>
+        </errordialog>
+        <externallinks>
+          <common>
+            <hits>Antal länkar</hits>
+            <host>Webb-adress</host>
+          </common>
+          <details>
+            <link>Webb-adress</link>
+            <page>Sida</page>
+          </details>
+          <errors>
+            <pagenumber>Sidnummer måste vara positivt</pagenumber>
+            <pagesize>Sidstorlek måste vara positivt</pagesize>
+          </errors>
+          <gadgettitle>Externa länkar</gadgettitle>
+          <pager>
+            <info>Objekt: {0} - {1} av {2}</info>
+            <next>&gt;&gt;</next>
+            <prev>&lt;&lt;</prev>
+            <split>... (sv)</split>
+          </pager>
+          <settings>
+            <legend>Inställningar</legend>
+            <pagesize>Antal objekt att visas</pagesize>
+            <showdetails>Visa detaljer</showdetails>
+          </settings>
+        </externallinks>
+        <hosting>
+          <fileupload>
+            <conflictingdirectory>En mapp med samma namn som den nya filen finns redan.</conflictingdirectory>
+            <fileexists>En fil med samma namn finns redan, men du har inte behörighet att ersätta filen.</fileexists>
+            <fileisnotimage>Den valda filen är ingen bild.</fileisnotimage>
+            <fileoverwriteconfirmation>En fil med samma namn finns redan. Vill du ersätta den befintliga filen?</fileoverwriteconfirmation>
+            <invaliddirectory>Den valda destinationskatalogen saknas.</invaliddirectory>
+            <permissiondenied>Du saknar behörigheter att skapa filer i den valda katalogen.</permissiondenied>
+            <targetfilecheckedout>En utcheckad file med samma namn finns redan i den valda katalogen.</targetfilecheckedout>
+          </fileupload>
+        </hosting>
+        <menu>
+          <admin>Adminläge</admin>
+          <cms>CMS</cms>
+          <cmssettings>EPiServer CMS</cmssettings>
+          <edit>Redigeraläge</edit>
+          <license>Licensavtal</license>
+          <logout>Logga ut</logout>
+          <mysettings>Mina inställningar</mysettings>
+          <reportcenter>Rapporter</reportcenter>
+          <selectasite>Välj en site för att visa i Visa-läge</selectasite>
+          <toviewmode>Till visaläge [{0}]</toviewmode>
+        </menu>
+        <mytasks>
+          <assignedto>Tilldela till</assignedto>
+          <createnewtask>Skapa i redigeraläge</createnewtask>
+          <createnewtasktitle>Skapa uppgift från redigeraläge</createnewtasktitle>
+          <description>Beskrivning</description>
+          <duedate>Förfallodatum</duedate>
+          <EmptySubjectWarning>Uppgiftsbeskrivningen är tom</EmptySubjectWarning>
+          <errors>
+            <settingsusergroupnames>Ange korrekta namn för användargrupper.</settingsusergroupnames>
+          </errors>
+          <IncorrectTaskStatusWarning>Angiven status är inte giltig för uppgiften</IncorrectTaskStatusWarning>
+          <InvalidDueDate>Ogiltigt förfallodatum</InvalidDueDate>
+          <legend>Skapa en ny uppgift</legend>
+          <mygroups>Mina grupper (åtskilda med komma)</mygroups>
+          <pagetasks>Sidaktiviteter</pagetasks>
+          <quickadd>Lägg till</quickadd>
+          <quickaddtitle>Skapa uppgift från dashboard</quickaddtitle>
+          <settingsheading>Inställningar</settingsheading>
+          <status>Status</status>
+          <subject>Ämne</subject>
+          <title>Aktiviteter</title>
+          <tooltip>
+            <created>Skapad</created>
+            <pageid>Page ID</pageid>
+            <pagepath>Sökväg</pagepath>
+          </tooltip>
+          <UnknownUserWarning>Den angivne användaren hittades ej</UnknownUserWarning>
+        </mytasks>
+        <notchangedpages>
+          <errors>
+            <monthswithoutchanges>Antalet månader måste vara ett heltal större än noll.</monthswithoutchanges>
+            <numberofitems>Antalet objekt måste vara heltal större än noll.</numberofitems>
+          </errors>
+          <gadgettitle>Oförändrade sidor</gadgettitle>
+          <indexview>
+            <changedby>Ändrad av</changedby>
+            <modified>Ändrad</modified>
+            <name>Namn</name>
+            <status>Status</status>
+          </indexview>
+          <settingsview>
+            <invertsorting>Sortera fallande</invertsorting>
+            <legend>Inställningar</legend>
+            <monthswithoutchanges>Antal månader</monthswithoutchanges>
+            <numberofitems>Antal objekt att lista</numberofitems>
+          </settingsview>
+        </notchangedpages>
+        <notesgadget>
+          <backgroundcolor>Bakgrundsfärg</backgroundcolor>
+          <backgroundcolors>
+            <blue>Blå</blue>
+            <green>Grön</green>
+            <orange>Orange</orange>
+            <pink>Rosa</pink>
+            <white>Vit</white>
+            <yellow>Gul</yellow>
+          </backgroundcolors>
+          <textsize>Textstorlek</textsize>
+          <textsizes>
+            <big>Stor</big>
+            <normal>Normal</normal>
+            <verybig>Väldigt stor</verybig>
+          </textsizes>
+          <title>Anteckningar</title>
+        </notesgadget>
+        <pageinfo>
+          <modifiedby>Uppdaterad av</modifiedby>
+          <modifieddate>Uppdaterad</modifieddate>
+          <pagelink>ID</pagelink>
+          <pagetype>Sidtyp</pagetype>
+          <path>Sökväg</path>
+        </pageinfo>
+        <quicklinks>
+          <addlink>Ny länk</addlink>
+          <cmsedit>
+            <text>Redigera</text>
+            <tooltip>Öppna redigeraläget i CMS</tooltip>
+          </cmsedit>
+          <cmslinkcategoryname>CMS</cmslinkcategoryname>
+          <contentguidecategoryname>Snabbpublicering</contentguidecategoryname>
+          <deletelink>Ta bort länk</deletelink>
+          <episerverworldforum>
+            <text>EPiServer World forum</text>
+            <tooltip>Forumet på EPiServer World</tooltip>
+          </episerverworldforum>
+          <linktitle>Titel</linktitle>
+          <linkurl>Webadress</linkurl>
+          <managelinks>Hantera länkar</managelinks>
+          <mylinkscategoryname>Mina länkar</mylinkscategoryname>
+          <nocategory>Ej kategoriserat</nocategory>
+          <title>Snabblänkar</title>
+        </quicklinks>
+        <recentlychangedpages>
+          <common>
+            <byall>Allas uppdateringar</byall>
+            <byme>Mina uppdateringar</byme>
+            <heading>Nyligen uppdaterade sidor</heading>
+          </common>
+          <configure>
+            <defaultview>Förvald vy</defaultview>
+            <heading>Inställningar</heading>
+            <numberofitems>Maximalt antal sidor</numberofitems>
+          </configure>
+          <index>
+            <changedby>Uppdaterad av</changedby>
+            <modified>Uppdaterad</modified>
+            <name>Namn</name>
+            <status>Status</status>
+          </index>
+          <rss>
+            <description>Detta är de senast ändrade sidorna på siten {0}</description>
+          </rss>
+        </recentlychangedpages>
+        <rssgadget>
+          <errors>
+            <invalidfeed>Flödet kunde inte läsas på grund av ett XML fel i innehållet från "{0}".</invalidfeed>
+            <invaliditemstoshow>Antalet poster att visa måste vara ett positivt heltal.</invaliditemstoshow>
+            <invaliduri>Felaktig address. Adressen måste vara en absolut URL som startar med http:// eller https://</invaliduri>
+            <notafeed>Den angivna adressen [{0}] innehåller inte en giltig RSS- eller Atom-källa.</notafeed>
+          </errors>
+          <loadingfeedmessage>Laddar källan ...</loadingfeedmessage>
+          <settings>
+            <feedurl>URL</feedurl>
+            <itemstoshow>Antal poster att visa</itemstoshow>
+            <loadfeedtitle>Hämta titel från källan</loadfeedtitle>
+            <title>Titel</title>
+          </settings>
+          <title>RSS-läsare</title>
+        </rssgadget>
+        <search>
+          <files>
+            <category>Filer</category>
+          </files>
+          <pages>
+            <category>Sidor</category>
+            <id>ID</id>
+            <linkurl>Link URL</linkurl>
+            <tooltip>
+              <changed>Ändrad</changed>
+              <created>Skapad</created>
+              <id>ID</id>
+              <linkurl>Länk-URL</linkurl>
+              <pagetype>Sidtyp</pagetype>
+            </tooltip>
+          </pages>
+        </search>
+        <uploadfile>
+          <controller>
+            <noresize>Ingen omskalning</noresize>
+          </controller>
+          <index>
+            <alttextlabel>Alternativ text</alttextlabel>
+            <imagelegend>Bild</imagelegend>
+            <imagesizelabel>Skala bild</imagesizelabel>
+            <savetolegend>Spara till</savetolegend>
+            <selectlabel>Välj fil</selectlabel>
+            <uploadbutton>Ladda upp och infoga</uploadbutton>
+          </index>
+        </uploadfile>
+        <visitorgroups>
+          <criteria>
+            <categories>
+              <categories>Kategorier</categories>
+              <category>Sajtkriterier</category>
+              <categorylabel>Kategori:</categorylabel>
+              <description>Matcha när besökaren har besökt angivet antal sidor med den angivna kategorin</description>
+              <displayname>Besökt sida med kategori</displayname>
+              <numberofpageviewslabel>Besökt minst</numberofpageviewslabel>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <totalcountlabel>sidor av totalt</totalcountlabel>
+            </categories>
+            <geographiccoordinate>
+              <category>Tid- och platskriterier</category>
+              <coordinatepicker>Väljare för geografiska koordinater</coordinatepicker>
+              <description>Matcha besökarens position med valda geografiska koordinater</description>
+              <displayname>Geografiska koordinater</displayname>
+              <googlemapsterms>
+                <accepttext>Du måste godkänna avtalet för Google Maps API för att använda den här funktionaliteten.</accepttext>
+                <agreecheckbox>Jag har godkänt Googles avtal.</agreecheckbox>
+                <customurltext>Om du har en speciell URL till Google Maps API, t.ex. för ett Google Maps API Premier-konto, vänligen sätt googleMapsApiV3Url i siteSettings i er konfiguration till denna URL.</customurltext>
+                <reviewlink>Granska Googles avtal för användande av Google Maps API</reviewlink>
+                <thankyoutext>Tack! Du kan nu använda "välj plats"-funktionen.</thankyoutext>
+                <title>Avtal för Google Maps API</title>
+              </googlemapsterms>
+              <latitude>Latitud: </latitude>
+              <location>Plats: </location>
+              <longitude>Longitud: </longitude>
+              <radius>Radie: </radius>
+              <selectlocation>Välj plats</selectlocation>
+            </geographiccoordinate>
+            <geographiclocation>
+              <anylocation>Alla</anylocation>
+              <category>Tid- och platskriterier</category>
+              <continent>Kontinent</continent>
+              <continents>
+                <AF>Afrika</AF>
+                <AN>Antarktis</AN>
+                <AS>Asien</AS>
+                <EU>Europa</EU>
+                <NA>Nordamerica</NA>
+                <OC>Oceanien</OC>
+                <SA>Sydamerica</SA>
+              </continents>
+              <countries>
+                <!-- Exceptional reservations in the ISO 3166 standard-->
+                <AD>Andorra</AD>
+                <AE>Förenade Arabemiraten</AE>
+                <AF>Afghanistan</AF>
+                <AG>Antigua och Barbuda</AG>
+                <AI>Anguilla</AI>
+                <AL>Albanien</AL>
+                <AM>Armenien</AM>
+                <AN>Nederländska Antillerna</AN>
+                <AO>Angola</AO>
+                <AQ>Antarktis</AQ>
+                <AR>Argentina</AR>
+                <AS>Samoa, Amerikanska</AS>
+                <AT>Österrike</AT>
+                <AU>Australien</AU>
+                <AW>Aruba</AW>
+                <AX>Åland</AX>
+                <AZ>Azerbajdzjan</AZ>
+                <BA>Bosnien och Hercegovina</BA>
+                <BB>Barbados</BB>
+                <BD>Bangladesh</BD>
+                <BE>Belgien</BE>
+                <BF>Burkina Faso</BF>
+                <BG>Bulgarien</BG>
+                <BH>Bahrain</BH>
+                <BI>Burundi</BI>
+                <BJ>Benin</BJ>
+                <BL>Saint-Barthélemy</BL>
+                <BM>Bermuda</BM>
+                <BN>Brunei</BN>
+                <BO>Bolivia</BO>
+                <BR>Brazilien</BR>
+                <BS>Bahamas</BS>
+                <BT>Bhutan</BT>
+                <BV>Bouvetön</BV>
+                <BW>Botswana</BW>
+                <BY>Vitryssland</BY>
+                <BZ>Belize</BZ>
+                <CA>Kanada</CA>
+                <CC>Kokosöarna</CC>
+                <CD>Kongo, Demokratiska republiken</CD>
+                <CF>Centralafrikanska republiken</CF>
+                <CG>Kongo, Republiken</CG>
+                <CH>Schweiz</CH>
+                <CI>Elfenbenskusten</CI>
+                <CK>Cooköarna</CK>
+                <CL>Chile</CL>
+                <CM>Kamerun</CM>
+                <CN>Kina</CN>
+                <CO>Colombia</CO>
+                <CR>Costa Rica</CR>
+                <CU>Kuba</CU>
+                <CV>Kap Verde</CV>
+                <CX>Julön</CX>
+                <CY>Cypern</CY>
+                <CZ>Tjeckiska republiken</CZ>
+                <DE>Tyskland</DE>
+                <DJ>Djibouti</DJ>
+                <DK>Danmark</DK>
+                <DM>Dominica</DM>
+                <DO>Dominikanska Republic</DO>
+                <DZ>Algeriet</DZ>
+                <EC>Ecuador</EC>
+                <EE>Estland</EE>
+                <EG>Egypten</EG>
+                <EH>Västsahara</EH>
+                <ER>Eritrea</ER>
+                <ES>Spanien</ES>
+                <ET>Etiopien</ET>
+                <FI>Finland</FI>
+                <FJ>Fiji</FJ>
+                <FK>Falklandöarna (Malvinerna)</FK>
+                <FM>Mikronesiens federerade stater</FM>
+                <FO>Färöarna</FO>
+                <FR>Frankrike</FR>
+                <FX>Frankrike, Metropolitan</FX>
+                <GA>Gabon</GA>
+                <GB>Storbrittanien</GB>
+                <GD>Grenada</GD>
+                <GE>Georgien</GE>
+                <GF>Franska Guyana</GF>
+                <GG>Guernsey</GG>
+                <GH>Ghana</GH>
+                <GI>Gibraltar</GI>
+                <GL>Grönland</GL>
+                <GM>Gambia</GM>
+                <GN>Guinea</GN>
+                <GP>Guadeloupe</GP>
+                <GQ>Ekvatorialguinea</GQ>
+                <GR>Grekland</GR>
+                <GS>Sydgeorgien och Sydsandwichöarna</GS>
+                <GT>Guatemala</GT>
+                <GU>Guam</GU>
+                <GW>Guinea-Bissau</GW>
+                <GY>Guyana</GY>
+                <HK>Hongkong</HK>
+                <HM>Heard- och McDonaldsöarna</HM>
+                <HN>Honduras</HN>
+                <HR>Kroatien</HR>
+                <HT>Haiti</HT>
+                <HU>Ungern</HU>
+                <ID>Indonesien</ID>
+                <IE>Irland</IE>
+                <IL>Israel</IL>
+                <IM>Isle Of Man</IM>
+                <IN>Indien</IN>
+                <IO>Brittiska territoriet i Indiska oceanen</IO>
+                <IQ>Irak</IQ>
+                <IR>Iran</IR>
+                <IS>Island</IS>
+                <IT>Italien</IT>
+                <JE>Jersey</JE>
+                <JM>Jamaica</JM>
+                <JO>Jordanien</JO>
+                <JP>Japan</JP>
+                <KE>Kenya</KE>
+                <KG>Kirgiziska republiken</KG>
+                <KH>Kambodja</KH>
+                <KI>Kiribati</KI>
+                <KM>Komorerna</KM>
+                <KN>Saint Kitts och Nevis</KN>
+                <KP>Korea, Demokratiska folkrepubliken</KP>
+                <KR>Korea, Republiken</KR>
+                <KW>Kuwait</KW>
+                <KY>Caymanöarna</KY>
+                <KZ>Kazakstan</KZ>
+                <LA>Laos</LA>
+                <LB>Libanon</LB>
+                <LC>Saint Lucia</LC>
+                <LI>Liechtenstein</LI>
+                <LK>Sri Lanka</LK>
+                <LR>Liberia</LR>
+                <LS>Lesotho</LS>
+                <LT>Litauen</LT>
+                <LU>Luxembourg</LU>
+                <LV>Lettland</LV>
+                <LY>Libyen</LY>
+                <MA>Marocko</MA>
+                <MC>Monaco</MC>
+                <MD>Moldavien</MD>
+                <ME>Montenegro</ME>
+                <MF>Saint Martin</MF>
+                <MG>Madagaskar</MG>
+                <MH>Marshallöarna</MH>
+                <MK>Makedonien</MK>
+                <ML>Mali</ML>
+                <MM>Myanmar</MM>
+                <MN>Mongoliet</MN>
+                <MO>Macao</MO>
+                <MP>Nordmarianerna</MP>
+                <MQ>Martinique</MQ>
+                <MR>Mauretanien</MR>
+                <MS>Montserrat</MS>
+                <MT>Malta</MT>
+                <MU>Mauritius</MU>
+                <MV>Maldiverna</MV>
+                <MW>Malawi</MW>
+                <MX>Mexiko</MX>
+                <MY>Malaysia</MY>
+                <MZ>Moçambique</MZ>
+                <NA>Namibia</NA>
+                <NC>Nya Kaledonien</NC>
+                <NE>Niger</NE>
+                <NF>Norfolkön</NF>
+                <NG>Nigeria</NG>
+                <NI>Nicaragua</NI>
+                <NL>Nederländerna</NL>
+                <NO>Norge</NO>
+                <NP>Nepal</NP>
+                <NR>Nauru</NR>
+                <NU>Niue</NU>
+                <NZ>Nya Zeeland</NZ>
+                <OM>Oman</OM>
+                <PA>Panama</PA>
+                <PE>Peru</PE>
+                <PF>Franska Polynesien</PF>
+                <PG>Papua Nya Guinea</PG>
+                <PH>Filippinerna</PH>
+                <PK>Pakistan</PK>
+                <PL>Polen</PL>
+                <PM>Saint Pierre och Miquelon</PM>
+                <PN>Pitcairnöarna</PN>
+                <PR>Puerto Rico</PR>
+                <PS>Palestina</PS>
+                <PT>Portugal</PT>
+                <PW>Palau</PW>
+                <PY>Paraguay</PY>
+                <QA>Qatar</QA>
+                <RE>Réunion</RE>
+                <RO>Rumäninen</RO>
+                <RS>Serbien</RS>
+                <RU>Ryssland</RU>
+                <RW>Rwanda</RW>
+                <SA>Saudiarabien</SA>
+                <SB>Salomonöarna</SB>
+                <SC>Seychellerna</SC>
+                <SD>Sudan</SD>
+                <SE>Sverige</SE>
+                <SG>Singapore</SG>
+                <SH>Saint Helena, Ascension och Tristan Da Cunha</SH>
+                <SI>Slovenien</SI>
+                <SJ>Svalbard och Jan Mayen</SJ>
+                <SK>Slovakien</SK>
+                <SL>Sierra Leone</SL>
+                <SM>San Marino</SM>
+                <SN>Senegal</SN>
+                <SO>Somalia</SO>
+                <SR>Suriname</SR>
+                <ST>São Tomé och Príncipe</ST>
+                <SV>El Salvador</SV>
+                <SY>Syrien</SY>
+                <SZ>Swaziland</SZ>
+                <TC>Turks- och Caicosöarna</TC>
+                <TD>Tchad</TD>
+                <TF>Franska sydterritorierna</TF>
+                <TG>Togo</TG>
+                <TH>Thailand</TH>
+                <TJ>Tadzjikistan</TJ>
+                <TK>Tokelauöarna</TK>
+                <TL>Östtimor</TL>
+                <TM>Turkmenistan</TM>
+                <TN>Tunisien</TN>
+                <TO>Tonga</TO>
+                <TR>Turkiet</TR>
+                <TT>Trinidad och Tobago</TT>
+                <TV>Tuvalu</TV>
+                <TW>Taiwan</TW>
+                <TZ>Tanzania</TZ>
+                <UA>Ukraina</UA>
+                <UG>Uganda</UG>
+                <UM>Amerikas Förenta Staternas mindre öar i Oceanien och Västindien</UM>
+                <US>Amerikas Förenta Stater, USA</US>
+                <UY>Uruguay</UY>
+                <UZ>Uzbekistan</UZ>
+                <VA>Heliga stolen (Vatikanstaten)</VA>
+                <VC>Saint Vincent och Grenadinerna</VC>
+                <VE>Venezuela</VE>
+                <WF>Wallis- och Futunaöarna</WF>
+                <VG>Jungfruöarna, Brittiska</VG>
+                <VI>Jungfruöarna, Amerikanska</VI>
+                <VN>Vietnam</VN>
+                <WS>Samoa</WS>
+                <VU>Vanatu</VU>
+                <YE>Jemen</YE>
+                <YT>Mayotte</YT>
+                <ZA>Sydafrika</ZA>
+                <ZM>Zambia</ZM>
+                <ZW>Zimbabwe</ZW>
+              </countries>
+              <country>Land</country>
+              <description>Matcha besökarens position med ett angivet geografiskt område</description>
+              <displayname>Geografisk position</displayname>
+              <mustselectcontinent>En kontinent måste väljas</mustselectcontinent>
+              <region>Område</region>
+            </geographiclocation>
+            <numberofvisits>
+              <category>Sajtkriterier</category>
+              <comparison>Typ av jämförelse</comparison>
+              <description>Matcha hur många gånger besökaren har besökt sajten</description>
+              <displayname>Antal besök</displayname>
+              <fixtime>Datum</fixtime>
+              <floattime>Tidsspann</floattime>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <threshold>Gränsvärde</threshold>
+              <thresholdtolargewarning>Kan inte jämföra mer än tio värden för ett bestämt tidsintervall eftersom endast datumen för varje besökares tio senaste besök lagras.</thresholdtolargewarning>
+              <timeframe>Tidshorisont</timeframe>
+            </numberofvisits>
+            <referrer>
+              <category>URL-kriterier</category>
+              <description>Matcha URL:en för sidan som besökaren kom ifrån med en angiven textsträng</description>
+              <displayname>Refererande URL</displayname>
+            </referrer>
+            <required>Ett värde måste väljas</required>
+            <searchwordreferrer>
+              <category>URL-kriterier</category>
+              <description>Matcha sökord med en angiven textsträng</description>
+              <displayname>Sökord</displayname>
+            </searchwordreferrer>
+            <starturl>
+              <category>URL-kriterier</category>
+              <description>Matcha URL:en till den första sidan som besökaren kom till med angiven textsträng</description>
+              <displayname>Första URL:en</displayname>
+              <url>URL: </url>
+            </starturl>
+            <timeofday>
+              <bothornonetime>Både starttiden och sluttuden måste vara satt, eller så måste båda vara toma</bothornonetime>
+              <category>Tid- och platskriterier</category>
+              <daysofweek>Veckodag</daysofweek>
+              <description>Matcha en angiven tidsperiod och angivna veckodagar</description>
+              <displayname>Tid på dygnet</displayname>
+              <endtime>Till:</endtime>
+              <friday>Fredag</friday>
+              <monday>Måndag</monday>
+              <nodayofweekselected>Minst en veckodag måste väljas</nodayofweekselected>
+              <saturday>Lördag</saturday>
+              <starttime>Från:</starttime>
+              <starttimeafterendtime>Starttiden kan inte vara senare än sluttiden</starttimeafterendtime>
+              <sunday>Söndag</sunday>
+              <thursday>Torsdag</thursday>
+              <tuesday>Tisdag</tuesday>
+              <wednesday>Onsdag</wednesday>
+            </timeofday>
+            <userprofile>
+              <category>Sajtkriterier</category>
+              <description>Matcha en av användarens profilegenskaper med ett angivet värde</description>
+              <displayname>Användarprofil</displayname>
+              <key>
+                <address>Address</address>
+                <company>Företag</company>
+                <email>Epost</email>
+                <firstname>Förnamn</firstname>
+                <lastname>Efternamn</lastname>
+                <title>Titel</title>
+              </key>
+              <required>Ett värde måste väljas</required>
+            </userprofile>
+            <viewedpages>
+              <category>Sajtkriterier</category>
+              <description>Matcha när besökaren besökt en angiven sida</description>
+              <displayname>Besökt sida</displayname>
+              <notvalidpagereference>Kunde inte hitta given sida</notvalidpagereference>
+            </viewedpages>
+            <visitorgroup>
+              <category>Besökargrupper</category>
+              <description>Matcha en existerande besökargrupp</description>
+              <displayname>Besökargruppsmedlemskap</displayname>
+              <foundcirclereference>Cirkulär referens upptäcktes. Var god välj en annan besökargrupp, en referens till den valda besökargruppen leder till en cirkulär referens</foundcirclereference>
+            </visitorgroup>
+          </criteria>
+          <edit>
+            <acceptrenaming>Acceptera</acceptrenaming>
+            <addtitle>Lägg till besökargrupp</addtitle>
+            <all>Alla</all>
+            <allof>Alla av: </allof>
+            <any>Någon</any>
+            <anyof>Någon av: </anyof>
+            <cantchangename>Denna besökargrupp kan ha tilldelats rättigheter till t.ex. sidor. Om du ändrar gruppens namn kommer dessa rättigheter inte längre att fungera.</cantchangename>
+            <category>
+              <default>Standard</default>
+            </category>
+            <criteria>Kriterier</criteria>
+            <drophint>Släpp nytt kriterium här</drophint>
+            <edittitle>Redigera besökargrupp</edittitle>
+            <generalfields>Övrig information</generalfields>
+            <info>Här kan du skapa, redigare och ta bort besökargrupper.</info>
+            <issecurityrole>Säkerhetsroll</issecurityrole>
+            <issecurityroledescription>Gör den här besökargruppen tillgänglig när du sätter rättigheter på sidor och filer</issecurityroledescription>
+            <match>Matcha</match>
+            <name>Namn</name>
+            <notes>Kommentar</notes>
+            <points>
+              <required>Tvingande</required>
+              <threshold>Tröskel</threshold>
+              <title>Poäng</title>
+            </points>
+            <pointsfrom>Minst {0} poäng från: </pointsfrom>
+            <statistics>Statistik</statistics>
+            <statisticsdescription>Aktivera statistik för den här besökargruppen</statisticsdescription>
+            <typenotfound>Typen {0} kunde inte laddas</typenotfound>
+            <undorenaming>Ångra</undorenaming>
+          </edit>
+          <index>
+            <copy>Kopia</copy>
+            <info>Besökargrupper används för att anpassa innehållet på din webbplats för en specifik målgrupp.</info>
+            <name>Besökargrupper</name>
+            <sessionstatewarning>Sessionshantering är inte konfigurerad för denna webbplats, vilket är ett krav för att besökargrupper ska fungera. Kontanta administratören för webbplatsen för mer information.</sessionstatewarning>
+            <table>
+              <action>Funktion</action>
+              <actions>
+                <copy>Duplicera</copy>
+                <delete>Ta bort</delete>
+                <edit>Redigera</edit>
+                <resetstatistics>Rensa statistik till och med nu</resetstatistics>
+              </actions>
+              <deleteconfirmation>Vill du verkligen ta bort besökargruppen?</deleteconfirmation>
+              <name>Namn</name>
+              <notes>Kommentar</notes>
+              <resetstatisticsconfirmation>Vill du verkligen rensa statistik för denna besökargrupp?</resetstatisticsconfirmation>
+            </table>
+          </index>
+        </visitorgroups>
+        <xformsviewer>
+          <autoupdatelevel>
+            <never>Aldrig</never>
+            <normal>Normalt (var 10 minut)</normal>
+            <often>Ofta (var 60 sekund)</often>
+            <seldom>Sällan (var 60 minut)</seldom>
+          </autoupdatelevel>
+          <AutoupdateLevel>Uppdatera automatiskt</AutoupdateLevel>
+          <chartperiodicity>
+            <day>Per dag</day>
+            <hour>Per timme</hour>
+            <minute>Per minut</minute>
+            <month>Per månad</month>
+            <week>Per vecka</week>
+          </chartperiodicity>
+          <ChartPeriodicityLabel>Diagramperiod</ChartPeriodicityLabel>
+          <ChartSettings>Diagraminställningar</ChartSettings>
+          <DemoMode>Demo-läge</DemoMode>
+          <error>
+            <fields>Inga fält har valts</fields>
+            <formfields>Välj formulärfält</formfields>
+            <numberofposts>Antalet bör vara ett heltal mellan 1 och 50</numberofposts>
+            <xformid>Välj formulär</xformid>
+          </error>
+          <GadgetTitle>Formulärvisning</GadgetTitle>
+          <NoFieldsAvailable>Inga tillgängliga fält</NoFieldsAvailable>
+          <NoFormsAvailable>Inga tillgängliga formulär</NoFormsAvailable>
+          <NumberOfPosts>Antal poster i listan</NumberOfPosts>
+          <SelectFields>Fält att visas</SelectFields>
+          <SelectXForm>Välj formulär</SelectXForm>
+          <settings>Inställning</settings>
+          <ShowChart>Visa diagram</ShowChart>
+          <ShowDate>Visa postningsdatum för post i listan</ShowDate>
+          <TableColumnPostedTime>Postat</TableColumnPostedTime>
+        </xformsviewer>
+      </cms>
+      <common>
+        <buttons>
+          <cancel>Avbryt</cancel>
+          <save>Spara</save>
+        </buttons>
+      </common>
+    </shell>
+  </language>
+</languages>

@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="Norsk" id="no">
+    <enums>
+      <episerver>
+        <personalization>
+          <visitorgroups>
+            <criteria>
+              <comparisontype>
+                <equal>Lik</equal>
+                <less>Mindre enn</less>
+                <more>Mer enn</more>
+              </comparisontype>
+              <distanceunit>
+                <kilometers>Kilometer</kilometers>
+                <miles>Engelske mil</miles>
+              </distanceunit>
+              <matchstringtype>
+                <contains>Inneholder</contains>
+                <endswith>Slutter med</endswith>
+                <equals>Er lik</equals>
+                <startswith>Begynner med</startswith>
+              </matchstringtype>
+              <referrertype>
+                <hostname>Vertsnavn</hostname>
+                <url>URL-adresse</url>
+              </referrertype>
+              <timeframe>
+                <since>Siden</since>
+                <total>Totalt</total>
+                <within>Innen</within>
+              </timeframe>
+              <timeperiod>
+                <day>Dager</day>
+                <month>Måned (30 dager)</month>
+                <week>Uker</week>
+                <year>År</year>
+              </timeperiod>
+              <visitorgroupmembershipstatus>
+                <member>Medlem av</member>
+                <notmember>Ikke medlem av</notmember>
+              </visitorgroupmembershipstatus>
+            </criteria>
+            <matchstringtype>
+              <contains>Inneholder</contains>
+              <endswith>Slutter med</endswith>
+              <equals>Er lik</equals>
+              <startswith>Begynner med</startswith>
+            </matchstringtype>
+          </visitorgroups>
+        </personalization>
+      </episerver>
+    </enums>
+    <reportcenter>
+      <report name="linkstatus">
+        <caption>Koblingsstatus</caption>
+        <description>Viser koblinger i områdeinnholdet som ikke virker.</description>
+        <heading>Koblingsstatus</heading>
+        <info>Denne rapporten viser koblinger i områdeinnholdet som ikke virker. Velg en side fra listen over rapportresultater for å åpne den i redigeringsmodus.</info>
+      </report>
+    </reportcenter>
+    <shell>
+      <cms>
+        <brokenlinks>
+          <controller>
+            <tooltip>Sidetype: {0}, side-ID: {1}</tooltip>
+            <webExceptions>
+              <fallback>Tilkoblingsfeil</fallback>
+              <status name="1">
+                <fallback>Feil ved navneløsing</fallback>
+              </status>
+              <status name="2">
+                <fallback>Tilkoblingsfeil</fallback>
+              </status>
+              <status name="7">
+                <fallback>Serverfeil</fallback>
+                <httpStatus name="400">Ugyldig forespørsel</httpStatus>
+                <httpStatus name="404">Finnes ikke</httpStatus>
+                <httpStatus name="503">Tidsavbrudd for gateway</httpStatus>
+              </status>
+            </webExceptions>
+          </controller>
+          <index>
+            <info>Denne rapporten viser koblinger som ikke kan nås. Dette kan for eksempel skyldes at en side er flyttet, at et område er nedlagt, eller at målkoblingen ikke kan leses for øyeblikket.</info>
+            <itemsperpage>Elementer per side</itemsperpage>
+            <name>Koblingsstatus</name>
+            <recheck>Kontroller på nytt</recheck>
+            <showreport>Vis rapport</showreport>
+            <table>
+              <brokensince>Brutt siden</brokensince>
+              <brokenurl>Brutt URL-adresse</brokenurl>
+              <lastchecked>Sist kontrollert</lastchecked>
+              <linkstatus>Koblingsstatus</linkstatus>
+              <pagename>Sidenavn</pagename>
+            </table>
+            <working>Arbeider ...</working>
+          </index>
+        </brokenlinks>
+        <directoryselector>
+          <directorylisting>
+            <directorytype>Mappe</directorytype>
+          </directorylisting>
+          <folderselector>
+            <emptyfolder>Denne mappen er tom.</emptyfolder>
+            <favoritesheading>Favoritter</favoritesheading>
+            <startingpointsheading>Startpunkter</startingpointsheading>
+            <wherelabel>Hvor</wherelabel>
+          </folderselector>
+          <index>
+            <nameheading>Navn</nameheading>
+            <sizeheading>Størrelse</sizeheading>
+            <typeheading>Type</typeheading>
+          </index>
+        </directoryselector>
+        <errordialog>
+          <description>Siden vil kanskje ikke fungere som den skal før den lastes på nytt. Klikk knappen nedenfor for å laste siden på nytt nå.</description>
+          <heading>Det har oppstått en ubehandlet feil i en bakgrunnsforespørsel.</heading>
+          <reloadtext>Last på nytt</reloadtext>
+          <title>En bakgrunnsforespørsel mislyktes.</title>
+        </errordialog>
+        <externallinks>
+          <common>
+            <hits>Antall koblinger</hits>
+            <host>Webadresse</host>
+          </common>
+          <details>
+            <link>Webadresse</link>
+            <page>Side</page>
+          </details>
+          <errors>
+            <pagenumber>Sidetallet må være positivt</pagenumber>
+            <pagesize>Sidestørrelsen må være positiv</pagesize>
+          </errors>
+          <gadgettitle>Eksterne koblinger</gadgettitle>
+          <pager>
+            <info>Elementer: {0}-{1} av {2}</info>
+            <next>&gt;&gt;</next>
+            <prev>&lt;&lt;</prev>
+            <split>...</split>
+          </pager>
+          <settings>
+            <legend>Innstillinger</legend>
+            <pagesize>Antall elementet som skal vises</pagesize>
+            <showdetails>Vis detaljer</showdetails>
+          </settings>
+        </externallinks>
+        <hosting>
+          <fileupload>
+            <conflictingdirectory>Det finnes allerede en mappe med samme navn som den nye filen.</conflictingdirectory>
+            <fileexists>Det finnes allerede en fil med det samme navnet, og du har ikke tilstrekkelige tillatelser til å erstatte den eksisterende filen</fileexists>
+            <fileisnotimage>Den valgte filen er ikke et bilde.</fileisnotimage>
+            <fileoverwriteconfirmation>Det finnes allerede en fil med det samme navnet. Vil du erstatte den eksisterende filen?</fileoverwriteconfirmation>
+            <invaliddirectory>Den valgte opplastingsmappen finnes ikke.</invaliddirectory>
+            <permissiondenied>Du har ikke tilstrekkelige tillatelser til å laste opp filer i valgt mappe</permissiondenied>
+            <targetfilecheckedout>Det finnes allerede en fil med det samme navnet, og den er sjekket ut til en annen bruker</targetfilecheckedout>
+          </fileupload>
+        </hosting>
+        <menu>
+          <admin>Administreringsmodus</admin>
+          <cms>CMS</cms>
+          <cmssettings>EPiServer CMS</cmssettings>
+          <edit>Redigeringsmodus</edit>
+          <license>Lisensavtale</license>
+          <logout>Logg av</logout>
+          <mysettings>Mine innstillinger</mysettings>
+          <reportcenter>Rapporter</reportcenter>
+          <selectasite>Velg område som skal vises i Visningsmodus</selectasite>
+          <toviewmode>Til visningsmodus [{0}]</toviewmode>
+        </menu>
+        <mytasks>
+          <assignedto>Tilordne til</assignedto>
+          <createnewtask>Opprett i Redigeringsmodus</createnewtask>
+          <createnewtasktitle>Opprett oppgave fra Redigeringsmodus</createnewtasktitle>
+          <description>Beskrivelse</description>
+          <duedate>Forfallsdato</duedate>
+          <EmptySubjectWarning>Oppgaveemnet er tomt</EmptySubjectWarning>
+          <errors>
+            <settingsusergroupnames>Angi korrekte brukergruppenavn.</settingsusergroupnames>
+          </errors>
+          <IncorrectTaskStatusWarning>Angitt status er ikke gyldig for oppgave</IncorrectTaskStatusWarning>
+          <InvalidDueDate>Oppgavens forfallsdato er ugyldig</InvalidDueDate>
+          <legend>Legg til oppgave</legend>
+          <mygroups>Mine grupper (atskilt med komma)</mygroups>
+          <pagetasks>Sideoppgaver</pagetasks>
+          <quickadd>Hurtigtillegging</quickadd>
+          <quickaddtitle>Opprett oppgave fra dashbordet</quickaddtitle>
+          <settingsheading>Innstillinger</settingsheading>
+          <status>Status</status>
+          <subject>Emne</subject>
+          <title>Mine oppgaver</title>
+          <tooltip>
+            <created>Opprettet</created>
+            <pageid>Side-ID</pageid>
+            <pagepath>Bane</pagepath>
+          </tooltip>
+          <UnknownUserWarning>Finner ikke angitt bruker</UnknownUserWarning>
+        </mytasks>
+        <notchangedpages>
+          <errors>
+            <monthswithoutchanges>Månedsnummer må være et heltall over null.</monthswithoutchanges>
+            <numberofitems>Antall elementer må være et heltall over null.</numberofitems>
+          </errors>
+          <gadgettitle>Uendrede sider</gadgettitle>
+          <indexview>
+            <changedby>Endret av</changedby>
+            <modified>Endret</modified>
+            <name>Navn</name>
+            <status>Status</status>
+          </indexview>
+          <settingsview>
+            <invertsorting>Sorter synkende</invertsorting>
+            <legend>Innstillinger</legend>
+            <monthswithoutchanges>Antall måneder</monthswithoutchanges>
+            <numberofitems>Antall elementet som skal vises</numberofitems>
+          </settingsview>
+        </notchangedpages>
+        <notesgadget>
+          <backgroundcolor>Bakgrunnsfarge</backgroundcolor>
+          <backgroundcolors>
+            <blue>Blå</blue>
+            <green>Grønn</green>
+            <orange>Oransje</orange>
+            <pink>Rosa</pink>
+            <white>Hvit</white>
+            <yellow>Gul</yellow>
+          </backgroundcolors>
+          <textsize>Tekststørrelse</textsize>
+          <textsizes>
+            <big>Stor</big>
+            <normal>Normal</normal>
+            <verybig>Størst</verybig>
+          </textsizes>
+          <title>Notater</title>
+        </notesgadget>
+        <pageinfo>
+          <modifiedby>Endret av</modifiedby>
+          <modifieddate>Endret</modifieddate>
+          <pagelink>ID</pagelink>
+          <pagetype>Sidetype</pagetype>
+          <path>Bane</path>
+        </pageinfo>
+        <quicklinks>
+          <addlink>Legg til kobling</addlink>
+          <cmsedit>
+            <text>Rediger</text>
+            <tooltip>Åpne CMS-redigeringsmodus</tooltip>
+          </cmsedit>
+          <cmslinkcategoryname>CMS</cmslinkcategoryname>
+          <contentguidecategoryname>Hurtigpublisering</contentguidecategoryname>
+          <deletelink>Slett kobling</deletelink>
+          <episerverworldforum>
+            <text>EPiServer World Forum</text>
+            <tooltip>Forumet på EPiServer World</tooltip>
+          </episerverworldforum>
+          <linktitle>Tittel</linktitle>
+          <linkurl>Webadresse</linkurl>
+          <managelinks>Håndter koblinger</managelinks>
+          <mylinkscategoryname>Mine koblinger</mylinkscategoryname>
+          <nocategory>Ingen kategori</nocategory>
+          <title>Hurtigkoblinger</title>
+        </quicklinks>
+        <recentlychangedpages>
+          <common>
+            <byall>Alle endringer</byall>
+            <byme>Mine endringer</byme>
+            <heading>Nylig endrede sider</heading>
+          </common>
+          <configure>
+            <defaultview>Standardvisning</defaultview>
+            <heading>Innstillinger</heading>
+            <numberofitems>Antall elementet som skal vises</numberofitems>
+          </configure>
+          <index>
+            <changedby>Endret av</changedby>
+            <modified>Lagret</modified>
+            <name>Navn</name>
+            <status>Status</status>
+          </index>
+          <rss>
+            <description>Dette er de sist endrede sidene på området {0}</description>
+          </rss>
+        </recentlychangedpages>
+        <rssgadget>
+          <errors>
+            <invalidfeed>Kan ikke lese feeden på grunn av en XML-feil i feedinnholdet som ble returnert fra {0}.</invalidfeed>
+            <invaliditemstoshow>Antall elementer som vises må være et positivt heltall.</invaliditemstoshow>
+            <invaliduri>Ugyldig webadresse. Webadressen må være en absolutt URL-adresse som begynner med http:// eller https://.</invaliduri>
+            <notafeed>Webadressen [{0}] inneholder ikke noen gyldig RSS- eller Atom-feed.</notafeed>
+          </errors>
+          <loadingfeedmessage>Laster inn feed ...</loadingfeedmessage>
+          <settings>
+            <feedurl>URL-adresse for feed</feedurl>
+            <itemstoshow>Elementer som skal vises</itemstoshow>
+            <loadfeedtitle>Hent tittel fra feed</loadfeedtitle>
+            <title>Tittel</title>
+          </settings>
+          <title>RSS-feedleser</title>
+        </rssgadget>
+        <search>
+          <files>
+            <category>Filer</category>
+          </files>
+          <pages>
+            <category>Sider</category>
+            <id>ID</id>
+            <linkurl>Link URL</linkurl>
+            <tooltip>
+              <changed>Endret</changed>
+              <created>Opprettet</created>
+              <id>ID</id>
+              <linkurl>Koblings-URL-adresse</linkurl>
+              <pagetype>Sidetype</pagetype>
+            </tooltip>
+          </pages>
+        </search>
+        <uploadfile>
+          <controller>
+            <noresize>Ikke endre størrelse</noresize>
+          </controller>
+          <index>
+            <alttextlabel>Alternativ tekst</alttextlabel>
+            <imagelegend>Bilde</imagelegend>
+            <imagesizelabel>Endre bildestørrelse</imagesizelabel>
+            <savetolegend>Lagre til</savetolegend>
+            <selectlabel>Velg fil</selectlabel>
+            <uploadbutton>Last opp og sett inn</uploadbutton>
+          </index>
+        </uploadfile>
+        <visitorgroups>
+          <criteria>
+            <categories>
+              <categories>Kategorier</categories>
+              <category>Kriterier for område</category>
+              <categorylabel>Kategori:</categorylabel>
+              <description>Treff på når gjesten har besøkt en side med en angitt kategori.</description>
+              <displayname>Besøkt kategori</displayname>
+              <numberofpageviewslabel>Vist minst</numberofpageviewslabel>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <totalcountlabel>sider av totalt</totalcountlabel>
+            </categories>
+            <geographiccoordinate>
+              <category>Kriterier for tid og sted</category>
+              <coordinatepicker>Velg geografisk koordinat</coordinatepicker>
+              <description>Samsvar mellom posisjonen til den besøkende og en valgt geografisk koordinat.</description>
+              <displayname>Geografisk koordinat</displayname>
+              <googlemapsterms>
+                <accepttext>Du må godta bruksvilkårene for Google Maps-API-et for å kunne bruke denne funksjonaliteten.</accepttext>
+                <agreecheckbox>Jeg godtar bruksvilkårene</agreecheckbox>
+                <customurltext>Hvis du har en egendefinert URL-adresse for Google Maps-API-et, eksempelvis for en Google Maps API Premier-konto, må du definere googleMapsApiV3Url i siteSettings i konfigurasjonen tilsvarende.</customurltext>
+                <reviewlink>Se gjennom bruksvilkår for Google Maps-API</reviewlink>
+                <thankyoutext>Takk. Du kan nå bruke funksjonaliteten for stedsvalg.</thankyoutext>
+                <title>Bruksvilkår for Google Maps-API</title>
+              </googlemapsterms>
+              <latitude>Breddegrad: </latitude>
+              <location>Sted: </location>
+              <longitude>Lengdegrad: </longitude>
+              <radius>Radius: </radius>
+              <selectlocation>Velg sted</selectlocation>
+            </geographiccoordinate>
+            <geographiclocation>
+              <anylocation>Alle</anylocation>
+              <category>Kriterier for tid og sted</category>
+              <continent>Kontinent</continent>
+              <continents>
+                <AF>Afrika</AF>
+                <AN>Antarktis</AN>
+                <AS>Asia</AS>
+                <EU>Europa</EU>
+                <NA>Nord-Amerika</NA>
+                <OC>Oceania</OC>
+                <SA>Sør-Amerika</SA>
+              </continents>
+              <countries>
+                <!-- Exceptional reservations in the ISO 3166 standard-->
+                <AD>Andorra</AD>
+                <AE>De forente arabiske emirater</AE>
+                <AF>Afghanistan</AF>
+                <AG>Antigua og Barbuda</AG>
+                <AI>Anguilla</AI>
+                <AL>Albania</AL>
+                <AM>Armenia</AM>
+                <AN>De nederlandske Antillene</AN>
+                <AO>Angola</AO>
+                <AQ>Antarktis</AQ>
+                <AR>Argentina</AR>
+                <AS>Amerikansk Samoa</AS>
+                <AT>Østerrike</AT>
+                <AU>Australia</AU>
+                <AW>Aruba</AW>
+                <AX>Åland</AX>
+                <AZ>Aserbajdsjan</AZ>
+                <BA>Bosnia-Hercegovina</BA>
+                <BB>Barbados</BB>
+                <BD>Bangladesh</BD>
+                <BE>Belgia</BE>
+                <BF>Burkina Faso</BF>
+                <BG>Bulgaria</BG>
+                <BH>Bahrain</BH>
+                <BI>Burundi</BI>
+                <BJ>Benin</BJ>
+                <BL>Saint Barthélemy</BL>
+                <BM>Bermuda</BM>
+                <BN>Brunei Darussalam</BN>
+                <BO>Bolivia, Den flernasjonale stat</BO>
+                <BR>Brasil</BR>
+                <BS>Bahamas</BS>
+                <BT>Bhutan</BT>
+                <BV>Bouvetøya</BV>
+                <BW>Botswana</BW>
+                <BY>Hviterussland</BY>
+                <BZ>Belize</BZ>
+                <CA>Canada</CA>
+                <CC>Kokosøyene (Keelingøyene)</CC>
+                <CD>Kongo, den demokratiske republikken</CD>
+                <CF>Den sentralafrikanske republikk</CF>
+                <CG>Kongo</CG>
+                <CH>Sveits</CH>
+                <CI>Elfenbenskysten</CI>
+                <CK>Cookøyene</CK>
+                <CL>Chile</CL>
+                <CM>Kamerun</CM>
+                <CN>Kina</CN>
+                <CO>Colombia</CO>
+                <CR>Costa Rica</CR>
+                <CU>Cuba</CU>
+                <CV>Kapp Verde</CV>
+                <CX>Christmasøya</CX>
+                <CY>Kypros</CY>
+                <CZ>Tsjekkia</CZ>
+                <DE>Tyskland</DE>
+                <DJ>Djibouti</DJ>
+                <DK>Danmark</DK>
+                <DM>Dominica</DM>
+                <DO>Den dominikanske republikk</DO>
+                <DZ>Algerie</DZ>
+                <EC>Ecuador</EC>
+                <EE>Estland</EE>
+                <EG>Egypt</EG>
+                <EH>Vest-Sahara</EH>
+                <ER>Eritrea</ER>
+                <ES>Spania</ES>
+                <ET>Etiopia</ET>
+                <FI>Finland</FI>
+                <FJ>Fiji</FJ>
+                <FK>Falklandsøyene (Malvinas)</FK>
+                <FM>Mikronesiaføderasjonen</FM>
+                <FO>Færøyene</FO>
+                <FR>Frankrike</FR>
+                <FX>Frankrike, metropolstaten</FX>
+                <GA>Gabon</GA>
+                <GB>Storbritannia</GB>
+                <GD>Grenada</GD>
+                <GE>Georgia</GE>
+                <GF>Fransk Guyana</GF>
+                <GG>Guernsey</GG>
+                <GH>Ghana</GH>
+                <GI>Gibraltar</GI>
+                <GL>Grønland</GL>
+                <GM>Gambia</GM>
+                <GN>Guinea</GN>
+                <GP>Guadeloupe</GP>
+                <GQ>Ekvatorial-Guinea</GQ>
+                <GR>Hellas</GR>
+                <GS>Sør-Georgia og Sør-Sandwich-øyene</GS>
+                <GT>Guatemala</GT>
+                <GU>Guam</GU>
+                <GW>Guinea-Bissau</GW>
+                <GY>Guyana</GY>
+                <HK>Hongkong</HK>
+                <HM>Heard- og McDonald-øyene</HM>
+                <HN>Honduras</HN>
+                <HR>Kroatia</HR>
+                <HT>Haiti</HT>
+                <HU>Ungarn</HU>
+                <ID>Indonesia</ID>
+                <IE>Irland</IE>
+                <IL>Israel</IL>
+                <IM>Isle Of Man</IM>
+                <IN>India</IN>
+                <IO>Det britiske territoriet i Det indiske hav</IO>
+                <IQ>Irak</IQ>
+                <IR>Iran, Den islamske republikken</IR>
+                <IS>Island</IS>
+                <IT>Italia</IT>
+                <JE>Jersey</JE>
+                <JM>Jamaica</JM>
+                <JO>Jordan</JO>
+                <JP>Japan</JP>
+                <KE>Kenya</KE>
+                <KG>Kirgisistan</KG>
+                <KH>Kambodsja</KH>
+                <KI>Kiribati</KI>
+                <KM>Komorene</KM>
+                <KN>St. Kitts og Nevis</KN>
+                <KP>Nord-Korea</KP>
+                <KR>Sør-Korea</KR>
+                <KW>Kuwait</KW>
+                <KY>Caymanøyene</KY>
+                <KZ>Kasakhstan</KZ>
+                <LA>Laos, den demokratiske folkerepublikken</LA>
+                <LB>Libanon</LB>
+                <LC>St. Lucia</LC>
+                <LI>Liechtenstein</LI>
+                <LK>Sri Lanka</LK>
+                <LR>Liberia</LR>
+                <LS>Lesotho</LS>
+                <LT>Litauen</LT>
+                <LU>Luxembourg</LU>
+                <LV>Latvia</LV>
+                <LY>Libya</LY>
+                <MA>Marokko</MA>
+                <MC>Monaco</MC>
+                <MD>Moldova, republikken</MD>
+                <ME>Montenegro</ME>
+                <MF>Saint Martin</MF>
+                <MG>Madagaskar</MG>
+                <MH>Marshalløyene</MH>
+                <MK>Makedonia, den tidligere jugoslaviske republikken</MK>
+                <ML>Mali</ML>
+                <MM>Myanmar</MM>
+                <MN>Mongolia</MN>
+                <MO>Macao</MO>
+                <MP>Nord-Marianene</MP>
+                <MQ>Martinique</MQ>
+                <MR>Mauritania</MR>
+                <MS>Montserrat</MS>
+                <MT>Malta</MT>
+                <MU>Mauritius</MU>
+                <MV>Maldivene</MV>
+                <MW>Malawi</MW>
+                <MX>Mexico</MX>
+                <MY>Malaysia</MY>
+                <MZ>Mosambik</MZ>
+                <NA>Namibia</NA>
+                <NC>Ny-Caledonia</NC>
+                <NE>Niger</NE>
+                <NF>Norfolk-øya</NF>
+                <NG>Nigeria</NG>
+                <NI>Nicaragua</NI>
+                <NL>Nederland</NL>
+                <NO>Norge</NO>
+                <NP>Nepal</NP>
+                <NR>Nauru</NR>
+                <NU>Niue</NU>
+                <NZ>New Zealand</NZ>
+                <OM>Oman</OM>
+                <PA>Panama</PA>
+                <PE>Peru</PE>
+                <PF>Fransk Polynesia</PF>
+                <PG>Papua Ny-Guinea</PG>
+                <PH>Filippinene</PH>
+                <PK>Pakistan</PK>
+                <PL>Polen</PL>
+                <PM>Saint-Pierre-et-Miquelon</PM>
+                <PN>Pitcairn</PN>
+                <PR>Puerto Rico</PR>
+                <PS>Det palestinske området, okkupert</PS>
+                <PT>Portugal</PT>
+                <PW>Palau</PW>
+                <PY>Paraguay</PY>
+                <QA>Qatar</QA>
+                <RE>Réunion</RE>
+                <RO>Romania</RO>
+                <RS>Serbia</RS>
+                <RU>Russland</RU>
+                <RW>Rwanda</RW>
+                <SA>Saudi-Arabia</SA>
+                <SB>Salomonøyene</SB>
+                <SC>Seychellene</SC>
+                <SD>Sudan</SD>
+                <SE>Sverige</SE>
+                <SG>Singapore</SG>
+                <SH>St. Helena, Ascension og Tristan Da Cunha</SH>
+                <SI>Slovenia</SI>
+                <SJ>Svalbard og Jan Mayen</SJ>
+                <SK>Slovakia</SK>
+                <SL>Sierra Leone</SL>
+                <SM>San Marino</SM>
+                <SN>Senegal</SN>
+                <SO>Somalia</SO>
+                <SR>Surinam</SR>
+                <ST>São Tomé og Príncipe</ST>
+                <SV>El Salvador</SV>
+                <SY>Syria</SY>
+                <SZ>Swaziland</SZ>
+                <TC>Turks- og Caicosøyene</TC>
+                <TD>Tsjad</TD>
+                <TF>Franske sørlige territorier</TF>
+                <TG>Togo</TG>
+                <TH>Thailand</TH>
+                <TJ>Tadsjikistan</TJ>
+                <TK>Tokelau</TK>
+                <TL>Timor-Leste</TL>
+                <TM>Turkmenistan</TM>
+                <TN>Tunisia</TN>
+                <TO>Tonga</TO>
+                <TR>Tyrkia</TR>
+                <TT>Trinidad og Tobago</TT>
+                <TV>Tuvalu</TV>
+                <TW>Taiwan, kinesisk provins</TW>
+                <TZ>Tanzania, Forbundsrepublikken</TZ>
+                <UA>Ukraina</UA>
+                <UG>Uganda</UG>
+                <UM>USAs mindre øyer</UM>
+                <US>USA</US>
+                <UY>Uruguay</UY>
+                <UZ>Usbekistan</UZ>
+                <VA>Vatikanstaten</VA>
+                <VC>St. Vincent og Grenadinene</VC>
+                <VE>Venezuela, Den bolivariske republikken</VE>
+                <WF>Wallis og Futuna</WF>
+                <VG>Jomfruøyene, De britiske</VG>
+                <VI>Jomfruøyene, USA</VI>
+                <VN>Vietnam</VN>
+                <WS>Samoa</WS>
+                <VU>Vanuatu</VU>
+                <YE>Jemen</YE>
+                <YT>Mayotte</YT>
+                <ZA>Sør-Afrika</ZA>
+                <ZM>Zambia</ZM>
+                <ZW>Zimbabwe</ZW>
+              </countries>
+              <country>Land</country>
+              <description>Samsvar mellom posisjonen til den besøkende og et angitt geografisk sted.</description>
+              <displayname>Geografisk sted</displayname>
+              <mustselectcontinent>Velg et kontinent</mustselectcontinent>
+              <region>Område</region>
+            </geographiclocation>
+            <numberofvisits>
+              <category>Kriterier for område</category>
+              <comparison>Type sammenligning</comparison>
+              <description>Treff på antall ganger gjesten har besøkt webområdet.</description>
+              <displayname>Antall besøk</displayname>
+              <fixtime>Dato</fixtime>
+              <floattime>Tidsrom</floattime>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <threshold>Terskel</threshold>
+              <thresholdtolargewarning>Du kan ikke sammenligne mer enn ti besøk for et bestemt tidsrom ettersom bare de ti siste besøkene for hver gjest lagres.</thresholdtolargewarning>
+              <timeframe>Tidsramme</timeframe>
+            </numberofvisits>
+            <referrer>
+              <category>Kriterier for URL-adresse</category>
+              <description>Samsvar mellom referanse-URL-adressen og en angitt tekststreng.</description>
+              <displayname>Henviser</displayname>
+            </referrer>
+            <required>Velg en verdi.</required>
+            <searchwordreferrer>
+              <category>Kriterier for URL-adresse</category>
+              <description>Samsvar mellom søkeordene og en angitt tekststreng.</description>
+              <displayname>Nøkkelord for søk</displayname>
+            </searchwordreferrer>
+            <starturl>
+              <category>Kriterier for URL-adresse</category>
+              <description>Samsvar mellom URL-adressen og adressen som førte den besøkende til webområdet.</description>
+              <displayname>Mål-URL-adresse</displayname>
+              <url>URL-adresse: </url>
+            </starturl>
+            <timeofday>
+              <bothornonetime>Angi både starttidspunkt og sluttidspunkt, eller la begge stå tomme.</bothornonetime>
+              <category>Kriterier for tid og sted</category>
+              <daysofweek>Ukedag</daysofweek>
+              <description>Treff på en bestemt tidsperiode og ukedag.</description>
+              <displayname>Tidspunkt</displayname>
+              <endtime>Til:</endtime>
+              <friday>Fredag</friday>
+              <monday>Mandag</monday>
+              <nodayofweekselected>Velg minst én dag.</nodayofweekselected>
+              <saturday>Lørdag</saturday>
+              <starttime>Fra:</starttime>
+              <starttimeafterendtime>Endre starttidspunktet slik at det er tidligere enn sluttidspunktet.</starttimeafterendtime>
+              <sunday>Søndag</sunday>
+              <thursday>Torsdag</thursday>
+              <tuesday>Tirsdag</tuesday>
+              <wednesday>Onsdag</wednesday>
+            </timeofday>
+            <userprofile>
+              <category>Kriterier for område</category>
+              <description>Samsvar mellom én av brukerprofilegenskapene og en angitt verdi.</description>
+              <displayname>Brukerprofil</displayname>
+              <key>
+                <address>Adresse</address>
+                <company>Firma</company>
+                <email>E-postadresse</email>
+                <firstname>Fornavn</firstname>
+                <lastname>Etternavn</lastname>
+                <title>Tittel</title>
+              </key>
+              <required>Velg en verdi</required>
+            </userprofile>
+            <viewedpages>
+              <category>Kriterier for område</category>
+              <description>Treff på når gjesten besøkte en bestemt side.</description>
+              <displayname>Besøkt side</displayname>
+              <notvalidpagereference>Finner ikke den valgte siden</notvalidpagereference>
+            </viewedpages>
+            <visitorgroup>
+              <category>Gjestegrupper</category>
+              <description>Treff på medlemskap i en eksisterende gjestegruppe.</description>
+              <displayname>Medlemskap i gjestegruppe</displayname>
+              <foundcirclereference>Velg en annen gjestegruppe. Referanse til denne gjestegruppen fører til en sirkelreferanse.</foundcirclereference>
+            </visitorgroup>
+          </criteria>
+          <edit>
+            <acceptrenaming>Godta</acceptrenaming>
+            <addtitle>Opprett gjestegruppe</addtitle>
+            <all>Alle</all>
+            <allof>Alle disse: </allof>
+            <any>Alle</any>
+            <anyof>En av disse: </anyof>
+            <cantchangename>Denne gjestegruppen kan ha blitt brukt til å tildele rettigheter for sider og filer. Hvis du endrer navnet, vil rettigheter som er angitt for denne gruppen, ikke lenger fungere.</cantchangename>
+            <category>
+              <default>Standard</default>
+            </category>
+            <criteria>Kriterier</criteria>
+            <drophint>Slipp nytt kriterium her</drophint>
+            <edittitle>Rediger gjestegruppe</edittitle>
+            <generalfields>Annen informasjon</generalfields>
+            <info>Tilpass innholdet på webområdet ved først å opprette gjestegrupper og deretter bruke gruppene til å målrette innholdet på sidene.</info>
+            <issecurityrole>Sikkerhetsrolle</issecurityrole>
+            <issecurityroledescription>Gjør denne gjestegruppen tilgjengelig ved angivelse av rettigheter for sider og filer.</issecurityroledescription>
+            <match>Treff</match>
+            <name>Navn</name>
+            <notes>Notater</notes>
+            <points>
+              <required>Påkrevd</required>
+              <threshold>Terskel</threshold>
+              <title>Punkt</title>
+            </points>
+            <pointsfrom>Minst {0} punkt fra: </pointsfrom>
+            <statistics>Statistikk</statistics>
+            <statisticsdescription>Aktiver statistikk for denne gjestegruppen</statisticsdescription>
+            <typenotfound>Typen {0} kan ikke lastes inn</typenotfound>
+            <undorenaming>Angre</undorenaming>
+          </edit>
+          <index>
+            <copy>Kopier</copy>
+            <info>Gjestegrupper brukes til å tilpasse innholdet på et webområde til en bestemt målgruppe.</info>
+            <name>Gjestegrupper</name>
+            <sessionstatewarning>Dette området er ikke konfigurert for bruk av øktstatus, som er en forutsetning for gjestegrupper. Kontakt administratoren for å få mer informasjon.</sessionstatewarning>
+            <table>
+              <action>Handling</action>
+              <actions>
+                <copy>Dupliser</copy>
+                <delete>Slett</delete>
+                <edit>Rediger</edit>
+                <resetstatistics>Fjern statistikk</resetstatistics>
+              </actions>
+              <deleteconfirmation>Er du sikker på at du vil slette denne gjestegruppen?</deleteconfirmation>
+              <name>Navn</name>
+              <notes>Notater</notes>
+              <resetstatisticsconfirmation>Er du sikker på at du vil fjerne statistikken for denne gjestegruppen?</resetstatisticsconfirmation>
+            </table>
+          </index>
+        </visitorgroups>
+        <xformsviewer>
+          <autoupdatelevel>
+            <never>Aldri</never>
+            <normal>Normal (hvert 10. minutt)</normal>
+            <often>Ofte (hvert 60. sekund)</often>
+            <seldom>Sjelden (hvert 60. minutt)</seldom>
+          </autoupdatelevel>
+          <AutoupdateLevel>Oppdater automatisk</AutoupdateLevel>
+          <chartperiodicity>
+            <day>Per dag</day>
+            <hour>Per time</hour>
+            <minute>Per minutt</minute>
+            <month>Per måned</month>
+            <week>Per uke</week>
+          </chartperiodicity>
+          <ChartPeriodicityLabel>Diagramperiodisitet</ChartPeriodicityLabel>
+          <ChartSettings>Diagraminnstillinger</ChartSettings>
+          <DemoMode>Demomodus</DemoMode>
+          <error>
+            <fields>Felter er ikke valgt</fields>
+            <formfields>Velg skjemafelt</formfields>
+            <numberofposts>Antall elementer må være mellom 1 og 50.</numberofposts>
+            <xformid>Velg et skjema</xformid>
+          </error>
+          <GadgetTitle>Skjemavisning</GadgetTitle>
+          <NoFieldsAvailable>Ingen tilgjengelige felter</NoFieldsAvailable>
+          <NoFormsAvailable>Ingen tilgjengelige skjemaer</NoFormsAvailable>
+          <NumberOfPosts>Antall elementet som skal vises</NumberOfPosts>
+          <SelectFields>Felter som skal vises</SelectFields>
+          <SelectXForm>Velg skjema</SelectXForm>
+          <settings>Innstillinger</settings>
+          <ShowChart>Vis diagram</ShowChart>
+          <ShowDate>Vis innleggingsdato for element</ShowDate>
+          <TableColumnPostedTime>Lagt inn</TableColumnPostedTime>
+        </xformsviewer>
+      </cms>
+      <common>
+        <buttons>
+          <cancel>Avbryt</cancel>
+          <save>Lagre</save>
+        </buttons>
+      </common>
+    </shell>
+  </language>
+</languages>

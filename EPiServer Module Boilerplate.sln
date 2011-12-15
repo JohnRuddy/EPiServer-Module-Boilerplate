@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{00000000-0000-0000-0000-000000000000}") = "EPiServerModuleBoilerplate", "EPiServerModuleBoilerplate.csproj", "{D771D6F9-B7ED-4AF6-BEEE-3207C82E5A54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D771D6F9-B7ED-4AF6-BEEE-3207C82E5A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D771D6F9-B7ED-4AF6-BEEE-3207C82E5A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D771D6F9-B7ED-4AF6-BEEE-3207C82E5A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D771D6F9-B7ED-4AF6-BEEE-3207C82E5A54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

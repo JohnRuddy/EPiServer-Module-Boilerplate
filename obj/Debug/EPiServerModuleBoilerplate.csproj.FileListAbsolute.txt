@@ -1,0 +1,9 @@
+C:\Projects\Github\EPiServer Module Boilerplate\bin\EPiServer Module Boilerplate.dll
+C:\Projects\Github\EPiServer Module Boilerplate\bin\EPiServer Module Boilerplate.pdb
+C:\Projects\Github\EPiServer Module Boilerplate\bin\Castle.Core.dll
+C:\Projects\Github\EPiServer Module Boilerplate\bin\PageTypeBuilder.dll
+C:\Projects\Github\EPiServer Module Boilerplate\bin\SubSonic.Core.dll
+C:\Projects\Github\EPiServer Module Boilerplate\bin\PageTypeBuilder.pdb
+C:\Projects\Github\EPiServer Module Boilerplate\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Github\EPiServer Module Boilerplate\obj\Debug\EPiServer Module Boilerplate.dll
+C:\Projects\Github\EPiServer Module Boilerplate\obj\Debug\EPiServer Module Boilerplate.pdb

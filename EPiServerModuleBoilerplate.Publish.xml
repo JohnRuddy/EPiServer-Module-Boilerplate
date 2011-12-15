@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Projects\Github\EPiServer Module Boilerplate\Releases\" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Modules/SampleModule/Data/Readme.txt" publishTime="12/15/2011 08:50:08" />
+    <file relUrl="Modules/SampleModule/Templates/Pages/DemoPage.aspx" publishTime="12/15/2011 09:00:04" />
+    <file relUrl="bin/EPiServer Module Boilerplate.pdb" publishTime="12/15/2011 09:05:59" />
+    <file relUrl="bin/PageTypeBuilder.dll" publishTime="12/15/2011 08:49:08" />
+    <file relUrl="bin/SubSonic.Core.dll" publishTime="12/15/2011 08:43:57" />
+    <file relUrl="bin/PageTypeBuilder.pdb" publishTime="12/15/2011 08:49:08" />
+    <file relUrl="bin/Castle.Core.dll" publishTime="12/15/2011 08:49:08" />
+    <file relUrl="Global.asax" publishTime="12/15/2011 08:35:11" />
+    <file relUrl="bin/EPiServer Module Boilerplate.dll" publishTime="12/15/2011 09:05:59" />
+  </publishProfile>
+</publishData>

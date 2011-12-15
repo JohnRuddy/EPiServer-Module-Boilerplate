@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="日本語 (Japanese)" id="ja">
+    <enums>
+      <episerver>
+        <personalization>
+          <visitorgroups>
+            <criteria>
+              <comparisontype>
+                <equal>次の値と等しい</equal>
+                <less>次の値より小さい</less>
+                <more>次の値より大きい</more>
+              </comparisontype>
+              <distanceunit>
+                <kilometers>キロメートル</kilometers>
+                <miles>マイル</miles>
+              </distanceunit>
+              <matchstringtype>
+                <contains>次の値を含む</contains>
+                <endswith>次の値で終了する</endswith>
+                <equals>次の値と等しい</equals>
+                <startswith>次の値で開始する</startswith>
+              </matchstringtype>
+              <referrertype>
+                <hostname>ホスト名</hostname>
+                <url>URL</url>
+              </referrertype>
+              <timeframe>
+                <since>以降</since>
+                <total>合計</total>
+                <within>以内</within>
+              </timeframe>
+              <timeperiod>
+                <day>日</day>
+                <month>月 (30 日)</month>
+                <week>週</week>
+                <year>年</year>
+              </timeperiod>
+              <visitorgroupmembershipstatus>
+                <member>メンバ</member>
+                <notmember>非メンバ</notmember>
+              </visitorgroupmembershipstatus>
+            </criteria>
+            <matchstringtype>
+              <contains>次の値を含む</contains>
+              <endswith>次の値で終了する</endswith>
+              <equals>次の値と等しい</equals>
+              <startswith>次の値で開始する</startswith>
+            </matchstringtype>
+          </visitorgroups>
+        </personalization>
+      </episerver>
+    </enums>
+    <reportcenter>
+      <report name="linkstatus">
+        <caption>リンク ステータス</caption>
+        <description>サイトのコンテンツで機能していないリンクを表示します。</description>
+        <heading>リンク ステータス</heading>
+        <info>このレポートは、サイトのコンテンツで機能していないリンクを表示します。 レポート結果のリストからページを選択して、編集モードで開きます。</info>
+      </report>
+    </reportcenter>
+    <shell>
+      <cms>
+        <brokenlinks>
+          <controller>
+            <tooltip>ページ タイプ:  {0}、ページ ID:  {1}</tooltip>
+            <webExceptions>
+              <fallback>接続エラー</fallback>
+              <status name="1">
+                <fallback>名前解決エラー</fallback>
+              </status>
+              <status name="2">
+                <fallback>接続エラー</fallback>
+              </status>
+              <status name="7">
+                <fallback>サーバー エラー</fallback>
+                <httpStatus name="400">無効な要求</httpStatus>
+                <httpStatus name="404">見つかりません</httpStatus>
+                <httpStatus name="503">ゲートウェイのタイムアウト</httpStatus>
+              </status>
+            </webExceptions>
+          </controller>
+          <index>
+            <info>このレポートには、接続できなかったリンクが表示されます。 この原因としては、ページが移動された、サイトがシャットダウンされた、その時点でターゲット リンクを読み取ることができなかった、などが考えられます。</info>
+            <itemsperpage>ページあたりの項目数</itemsperpage>
+            <name>リンク ステータス</name>
+            <recheck>再チェック</recheck>
+            <showreport>レポートの表示</showreport>
+            <table>
+              <brokensince>破損した日時</brokensince>
+              <brokenurl>破損した URL</brokenurl>
+              <lastchecked>最終チェック</lastchecked>
+              <linkstatus>リンク ステータス</linkstatus>
+              <pagename>ページ名</pagename>
+            </table>
+            <working>動作中です...</working>
+          </index>
+        </brokenlinks>
+        <directoryselector>
+          <directorylisting>
+            <directorytype>ディレクトリ</directorytype>
+          </directorylisting>
+          <folderselector>
+            <emptyfolder>このフォルダは空です。</emptyfolder>
+            <favoritesheading>お気に入り</favoritesheading>
+            <startingpointsheading>開始点</startingpointsheading>
+            <wherelabel>場所</wherelabel>
+          </folderselector>
+          <index>
+            <nameheading>名前</nameheading>
+            <sizeheading>サイズ</sizeheading>
+            <typeheading>タイプ</typeheading>
+          </index>
+        </directoryselector>
+        <errordialog>
+          <description>ページは再ロードされるまで正しく機能しない可能性があります。 今すぐページを再ロードするには、下のボタンをクリックします。</description>
+          <heading>バックグラウンド リクエストで処理できないエラーが発生しました。</heading>
+          <reloadtext>再ロード</reloadtext>
+          <title>バックグラウンド リクエストが失敗しました。</title>
+        </errordialog>
+        <externallinks>
+          <common>
+            <hits>リンク数</hits>
+            <host>Web アドレス</host>
+          </common>
+          <details>
+            <link>Web アドレス</link>
+            <page>ページ</page>
+          </details>
+          <errors>
+            <pagenumber>ページ番号は正である必要があります</pagenumber>
+            <pagesize>ページ サイズは正である必要があります</pagesize>
+          </errors>
+          <gadgettitle>外部リンク</gadgettitle>
+          <pager>
+            <info>項目数:  {0} - {1}/{2}</info>
+            <next>&gt;&gt;</next>
+            <prev>&lt;&lt;</prev>
+            <split>...</split>
+          </pager>
+          <settings>
+            <legend>設定</legend>
+            <pagesize>表示する項目数</pagesize>
+            <showdetails>詳細の表示</showdetails>
+          </settings>
+        </externallinks>
+        <hosting>
+          <fileupload>
+            <conflictingdirectory>新しいファイルと同じ名前のフォルダが既に存在します。</conflictingdirectory>
+            <fileexists>同じ名前のファイルが既に存在しますが、既存のファイルを置き換えるための十分なアクセス許可がありません。</fileexists>
+            <fileisnotimage>選択されたファイルはイメージではありません。</fileisnotimage>
+            <fileoverwriteconfirmation>同じ名前のファイルが既に存在します。 既存のファイルを置き換えますか?</fileoverwriteconfirmation>
+            <invaliddirectory>選択されたアップロード ディレクトリは存在しません。</invaliddirectory>
+            <permissiondenied>選択されたフォルダのファイルをアップロードするための十分なアクセス許可がありません。</permissiondenied>
+            <targetfilecheckedout>同じ名前のファイルが既に存在し、別のユーザーにチェックアウトされています。</targetfilecheckedout>
+          </fileupload>
+        </hosting>
+        <menu>
+          <admin>管理モード</admin>
+          <cms>CMS</cms>
+          <cmssettings>EPiServer CMS</cmssettings>
+          <edit>編集モード</edit>
+          <license>ご使用条件</license>
+          <logout>ログアウト</logout>
+          <mysettings>個人用設定</mysettings>
+          <reportcenter>レポート</reportcenter>
+          <selectasite>表示モードで表示するサイトの選択</selectasite>
+          <toviewmode>表示モード [{0}] へ</toviewmode>
+        </menu>
+        <mytasks>
+          <assignedto>割り当て先</assignedto>
+          <createnewtask>編集モードで作成</createnewtask>
+          <createnewtasktitle>編集モードからタスクを作成</createnewtasktitle>
+          <description>説明</description>
+          <duedate>期限</duedate>
+          <EmptySubjectWarning>タスクの件名が空です</EmptySubjectWarning>
+          <errors>
+            <settingsusergroupnames>正しいユーザー グループ名を指定してください。</settingsusergroupnames>
+          </errors>
+          <IncorrectTaskStatusWarning>指定されたステータスはタスクに対して有効ではありません</IncorrectTaskStatusWarning>
+          <InvalidDueDate>タスクの期限が無効です</InvalidDueDate>
+          <legend>タスクの追加</legend>
+          <mygroups>マイ グループ (コンマ区切り)</mygroups>
+          <pagetasks>ページ タスク</pagetasks>
+          <quickadd>簡易追加</quickadd>
+          <quickaddtitle>ダッシュボードからタスクを作成</quickaddtitle>
+          <settingsheading>設定</settingsheading>
+          <status>ステータス</status>
+          <subject>件名</subject>
+          <title>マイ タスク</title>
+          <tooltip>
+            <created>作成日</created>
+            <pageid>ページ ID</pageid>
+            <pagepath>パス</pagepath>
+          </tooltip>
+          <UnknownUserWarning>指定されたユーザーが見つかりません</UnknownUserWarning>
+        </mytasks>
+        <notchangedpages>
+          <errors>
+            <monthswithoutchanges>月数は 1 以上の整数である必要があります。</monthswithoutchanges>
+            <numberofitems>項目数は 1 以上の整数である必要があります。</numberofitems>
+          </errors>
+          <gadgettitle>変更されていないページ</gadgettitle>
+          <indexview>
+            <changedby>変更者</changedby>
+            <modified>変更日</modified>
+            <name>名前</name>
+            <status>ステータス</status>
+          </indexview>
+          <settingsview>
+            <invertsorting>降順でソート</invertsorting>
+            <legend>設定</legend>
+            <monthswithoutchanges>月数</monthswithoutchanges>
+            <numberofitems>表示する項目数</numberofitems>
+          </settingsview>
+        </notchangedpages>
+        <notesgadget>
+          <backgroundcolor>背景色</backgroundcolor>
+          <backgroundcolors>
+            <blue>青</blue>
+            <green>緑</green>
+            <orange>オレンジ</orange>
+            <pink>ピンク</pink>
+            <white>白</white>
+            <yellow>黄</yellow>
+          </backgroundcolors>
+          <textsize>テキスト サイズ</textsize>
+          <textsizes>
+            <big>大</big>
+            <normal>通常</normal>
+            <verybig>最大</verybig>
+          </textsizes>
+          <title>注意</title>
+        </notesgadget>
+        <pageinfo>
+          <modifiedby>変更者</modifiedby>
+          <modifieddate>変更日</modifieddate>
+          <pagelink>ID</pagelink>
+          <pagetype>ページ タイプ</pagetype>
+          <path>パス</path>
+        </pageinfo>
+        <quicklinks>
+          <addlink>リンクの追加</addlink>
+          <cmsedit>
+            <text>編集</text>
+            <tooltip>CMS の編集モードを開く</tooltip>
+          </cmsedit>
+          <cmslinkcategoryname>CMS</cmslinkcategoryname>
+          <contentguidecategoryname>簡易公開</contentguidecategoryname>
+          <deletelink>リンクの削除</deletelink>
+          <episerverworldforum>
+            <text>EPiServer World フォーラム</text>
+            <tooltip>EPiServer World 上のフォーラム</tooltip>
+          </episerverworldforum>
+          <linktitle>タイトル</linktitle>
+          <linkurl>Web アドレス</linkurl>
+          <managelinks>リンクの管理</managelinks>
+          <mylinkscategoryname>マイ リンク</mylinkscategoryname>
+          <nocategory>カテゴリなし</nocategory>
+          <title>クイック リンク</title>
+        </quicklinks>
+        <recentlychangedpages>
+          <common>
+            <byall>すべての変更</byall>
+            <byme>個人の変更</byme>
+            <heading>最近変更されたページ</heading>
+          </common>
+          <configure>
+            <defaultview>デフォルト表示</defaultview>
+            <heading>設定</heading>
+            <numberofitems>表示する項目数</numberofitems>
+          </configure>
+          <index>
+            <changedby>変更者</changedby>
+            <modified>保存日</modified>
+            <name>名前</name>
+            <status>ステータス</status>
+          </index>
+          <rss>
+            <description>サイト {0} に最近変更されたページがあります</description>
+          </rss>
+        </recentlychangedpages>
+        <rssgadget>
+          <errors>
+            <invalidfeed>"{0}" から返されたフィード コンテンツ内の XML エラーのため、フィードを読み取ることができませんでした。</invalidfeed>
+            <invaliditemstoshow>表示する項目数は正の整数である必要があります。</invaliditemstoshow>
+            <invaliduri>Web アドレスが無効です。 Web アドレスは http:// または https:// で始まる絶対 URL である必要があります。</invaliduri>
+            <notafeed>Web アドレス [{0}] に有効な RSS またはアトム フィードが含まれていません。</notafeed>
+          </errors>
+          <loadingfeedmessage>フィードをロードしています...</loadingfeedmessage>
+          <settings>
+            <feedurl>フィード URL</feedurl>
+            <itemstoshow>表示する項目</itemstoshow>
+            <loadfeedtitle>フィードからタイトルを取り出す</loadfeedtitle>
+            <title>タイトル</title>
+          </settings>
+          <title>RSS フィード リーダー</title>
+        </rssgadget>
+        <search>
+          <files>
+            <category>ファイル</category>
+          </files>
+          <pages>
+            <category>ページ</category>
+            <id>ID</id>
+            <linkurl>Link URL</linkurl>
+            <tooltip>
+              <changed>変更日</changed>
+              <created>作成日</created>
+              <id>ID</id>
+              <linkurl>リンク URL</linkurl>
+              <pagetype>ページ タイプ</pagetype>
+            </tooltip>
+          </pages>
+        </search>
+        <uploadfile>
+          <controller>
+            <noresize>サイズを変更しないでください</noresize>
+          </controller>
+          <index>
+            <alttextlabel>代替テキスト</alttextlabel>
+            <imagelegend>イメージ</imagelegend>
+            <imagesizelabel>イメージのサイズ変更</imagesizelabel>
+            <savetolegend>保存先</savetolegend>
+            <selectlabel>ファイルの選択</selectlabel>
+            <uploadbutton>アップロードおよび挿入</uploadbutton>
+          </index>
+        </uploadfile>
+        <visitorgroups>
+          <criteria>
+            <categories>
+              <categories>カテゴリ</categories>
+              <category>サイト基準</category>
+              <categorylabel>カテゴリ:</categorylabel>
+              <description>訪問者が指定されたカテゴリのページをいつ訪問したかと照合します。</description>
+              <displayname>訪問したカテゴリ</displayname>
+              <numberofpageviewslabel>合計から少なくとも</numberofpageviewslabel>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <totalcountlabel>ページを表示</totalcountlabel>
+            </categories>
+            <geographiccoordinate>
+              <category>時間と場所の基準</category>
+              <coordinatepicker>地理的座標の選択</coordinatepicker>
+              <description>訪問者の場所と選択された地理的座標を照合します。</description>
+              <displayname>地理的座標</displayname>
+              <googlemapsterms>
+                <accepttext>この機能を使用するには、Google Maps API 使用条件を承諾してください。</accepttext>
+                <agreecheckbox>使用条件に同意する</agreecheckbox>
+                <customurltext>Google Maps API Premier アカウントなど、Google Maps API 用のカスタム URL を持っている場合は、必要に応じて構成で siteSettings に googleMapsApiV3Url を設定します。</customurltext>
+                <reviewlink>Google Map API 使用条件を確認する</reviewlink>
+                <thankyoutext>ありがとうございます。 場所の選択機能を使用できるようになりました。</thankyoutext>
+                <title>Google Maps API 使用条件</title>
+              </googlemapsterms>
+              <latitude>緯度: </latitude>
+              <location>場所: </location>
+              <longitude>経度: </longitude>
+              <radius>半径: </radius>
+              <selectlocation>場所の選択</selectlocation>
+            </geographiccoordinate>
+            <geographiclocation>
+              <anylocation>任意の</anylocation>
+              <category>時間と場所の基準</category>
+              <continent>大陸</continent>
+              <continents>
+                <AF>アフリカ</AF>
+                <AN>南極</AN>
+                <AS>アジア</AS>
+                <EU>ヨーロッパ</EU>
+                <NA>北米</NA>
+                <OC>オセアニア</OC>
+                <SA>南米</SA>
+              </continents>
+              <countries>
+                <!-- Exceptional reservations in the ISO 3166 standard-->
+                <AD>アンドラ</AD>
+                <AE>アラブ首長国連邦</AE>
+                <AF>アフガニスタン</AF>
+                <AG>アンティグア・バーブーダ</AG>
+                <AI>アンギラ</AI>
+                <AL>アルバニア</AL>
+                <AM>アルメニア</AM>
+                <AN>オランダ領アンティル</AN>
+                <AO>アンゴラ</AO>
+                <AQ>南極</AQ>
+                <AR>アルゼンチン</AR>
+                <AS>米領サモア</AS>
+                <AT>オーストリア</AT>
+                <AU>オーストラリア</AU>
+                <AW>アルバ</AW>
+                <AX>オーランド諸島</AX>
+                <AZ>アゼルバイジャン</AZ>
+                <BA>ボスニア・ヘルツェゴビナ</BA>
+                <BB>バルバドス</BB>
+                <BD>バングラデシュ</BD>
+                <BE>ベルギー</BE>
+                <BF>ブルキナファソ</BF>
+                <BG>ブルガリア</BG>
+                <BH>バーレーン</BH>
+                <BI>ブルンジ</BI>
+                <BJ>ベナン</BJ>
+                <BL>サン・バルテルミー島</BL>
+                <BM>バミューダ諸島</BM>
+                <BN>ブルネイ・ダルサラーム国</BN>
+                <BO>ボリビア多民族国</BO>
+                <BR>ブラジル</BR>
+                <BS>バハマ</BS>
+                <BT>ブータン</BT>
+                <BV>ブーベ島</BV>
+                <BW>ボツワナ</BW>
+                <BY>ベラルーシ</BY>
+                <BZ>ベリーズ</BZ>
+                <CA>カナダ</CA>
+                <CC>ココス諸島</CC>
+                <CD>コンゴ民主共和国</CD>
+                <CF>中央アフリカ共和国</CF>
+                <CG>コンゴ</CG>
+                <CH>スイス</CH>
+                <CI>コートジボワール</CI>
+                <CK>クック諸島</CK>
+                <CL>チリ</CL>
+                <CM>カメルーン</CM>
+                <CN>中国</CN>
+                <CO>コロンビア</CO>
+                <CR>コスタリカ</CR>
+                <CU>キューバ</CU>
+                <CV>カーボベルデ</CV>
+                <CX>クリスマス島</CX>
+                <CY>キプロス</CY>
+                <CZ>チェコ共和国</CZ>
+                <DE>ドイツ</DE>
+                <DJ>ジブチ</DJ>
+                <DK>デンマーク</DK>
+                <DM>ドミニカ国</DM>
+                <DO>ドミニカ共和国</DO>
+                <DZ>アルジェリア</DZ>
+                <EC>エクアドル</EC>
+                <EE>エストニア</EE>
+                <EG>エジプト</EG>
+                <EH>西サハラ</EH>
+                <ER>エリトリア</ER>
+                <ES>スペイン</ES>
+                <ET>エチオピア</ET>
+                <FI>フィンランド</FI>
+                <FJ>フィジー</FJ>
+                <FK>フォークランド諸島 (マルビナス)</FK>
+                <FM>ミクロネシア連邦</FM>
+                <FO>フェロー諸島</FO>
+                <FR>フランス</FR>
+                <FX>フランス本国</FX>
+                <GA>ガボン</GA>
+                <GB>英国</GB>
+                <GD>グレナダ</GD>
+                <GE>グルジア</GE>
+                <GF>仏領ギアナ</GF>
+                <GG>ガーンジー島</GG>
+                <GH>ガーナ</GH>
+                <GI>ジブラルタル</GI>
+                <GL>グリーンランド</GL>
+                <GM>ガンビア</GM>
+                <GN>ギニア</GN>
+                <GP>グアドループ</GP>
+                <GQ>赤道ギニア</GQ>
+                <GR>ギリシャ</GR>
+                <GS>サウスジョージア・サウスサンドウィッチ諸島</GS>
+                <GT>グアテマラ</GT>
+                <GU>グアム</GU>
+                <GW>ギニアビサウ</GW>
+                <GY>ガイアナ</GY>
+                <HK>香港</HK>
+                <HM>ハード・マクドナルド諸島</HM>
+                <HN>ホンジュラス</HN>
+                <HR>クロアチア</HR>
+                <HT>ハイチ</HT>
+                <HU>ハンガリー</HU>
+                <ID>インドネシア</ID>
+                <IE>アイルランド</IE>
+                <IL>イスラエル</IL>
+                <IM>マン島</IM>
+                <IN>インド</IN>
+                <IO>英領インド洋地域</IO>
+                <IQ>イラク</IQ>
+                <IR>イラン・イスラム共和国</IR>
+                <IS>アイスランド</IS>
+                <IT>イタリア</IT>
+                <JE>ジャージー島</JE>
+                <JM>ジャマイカ</JM>
+                <JO>ヨルダン</JO>
+                <JP>日本</JP>
+                <KE>ケニア</KE>
+                <KG>キルギスタン</KG>
+                <KH>カンボジア</KH>
+                <KI>キリバス</KI>
+                <KM>コモロ</KM>
+                <KN>セントクリストファー・ネイビス</KN>
+                <KP>朝鮮民主主義人民共和国</KP>
+                <KR>大韓民国</KR>
+                <KW>クウェート</KW>
+                <KY>ケイマン諸島</KY>
+                <KZ>カザフスタン</KZ>
+                <LA>ラオス人民民主共和国</LA>
+                <LB>レバノン</LB>
+                <LC>セントルシア</LC>
+                <LI>リヒテンシュタイン</LI>
+                <LK>スリランカ</LK>
+                <LR>リベリア</LR>
+                <LS>レソト</LS>
+                <LT>リトアニア</LT>
+                <LU>ルクセンブルク</LU>
+                <LV>ラトビア</LV>
+                <LY>リビア アラブ プロレタリアート国家</LY>
+                <MA>モロッコ</MA>
+                <MC>モナコ</MC>
+                <MD>モルドバ共和国</MD>
+                <ME>モンテネグロ</ME>
+                <MF>サンマルタン島</MF>
+                <MG>マダガスカル</MG>
+                <MH>マーシャル諸島</MH>
+                <MK>マケドニア旧ユーゴスラビア共和国</MK>
+                <ML>マリ</ML>
+                <MM>ミャンマー</MM>
+                <MN>モンゴル</MN>
+                <MO>マカオ</MO>
+                <MP>北マリアナ諸島</MP>
+                <MQ>マルチニーク島</MQ>
+                <MR>モーリタニア</MR>
+                <MS>モンセラット</MS>
+                <MT>マルタ</MT>
+                <MU>モーリシャス</MU>
+                <MV>モルディブ</MV>
+                <MW>マラウイ</MW>
+                <MX>メキシコ</MX>
+                <MY>マレーシア</MY>
+                <MZ>モザンビーク</MZ>
+                <NA>ナミビア</NA>
+                <NC>ニューカレドニア</NC>
+                <NE>ニジェール</NE>
+                <NF>ノーフォーク島</NF>
+                <NG>ナイジェリア</NG>
+                <NI>ニカラグア</NI>
+                <NL>オランダ</NL>
+                <NO>ノルウェー</NO>
+                <NP>ネパール</NP>
+                <NR>ナウル</NR>
+                <NU>ニウエ</NU>
+                <NZ>ニュージーランド</NZ>
+                <OM>オマーン</OM>
+                <PA>パナマ</PA>
+                <PE>ペルー</PE>
+                <PF>仏領ポリネシア</PF>
+                <PG>パプアニューギニア</PG>
+                <PH>フィリピン</PH>
+                <PK>パキスタン</PK>
+                <PL>ポーランド</PL>
+                <PM>サンピエール・ミクロン</PM>
+                <PN>ピトケアン</PN>
+                <PR>プエルトリコ</PR>
+                <PS>パレスチナ自治区</PS>
+                <PT>ポルトガル</PT>
+                <PW>パラオ</PW>
+                <PY>パラグアイ</PY>
+                <QA>カタール</QA>
+                <RE>レユニオン</RE>
+                <RO>ルーマニア</RO>
+                <RS>セルビア</RS>
+                <RU>ロシア連邦</RU>
+                <RW>ルワンダ</RW>
+                <SA>サウジアラビア</SA>
+                <SB>ソロモン諸島</SB>
+                <SC>セイシェル</SC>
+                <SD>スーダン</SD>
+                <SE>スウェーデン</SE>
+                <SG>シンガポール</SG>
+                <SH>セントヘレナ、アセンションおよびトリスタンダクーニャ</SH>
+                <SI>スロベニア</SI>
+                <SJ>スバールバル諸島・ヤンマイエン島</SJ>
+                <SK>スロバキア</SK>
+                <SL>シエラレオネ</SL>
+                <SM>サンマリノ</SM>
+                <SN>セネガル</SN>
+                <SO>ソマリア</SO>
+                <SR>スリナム</SR>
+                <ST>サントメ・プリンシペ</ST>
+                <SV>エルサルバドル</SV>
+                <SY>シリア・アラブ共和国</SY>
+                <SZ>スワジランド</SZ>
+                <TC>タークス諸島・カイコス諸島</TC>
+                <TD>チャド</TD>
+                <TF>仏領極南諸島</TF>
+                <TG>トーゴ</TG>
+                <TH>タイ</TH>
+                <TJ>タジキスタン</TJ>
+                <TK>トケラウ諸島</TK>
+                <TL>東ティモール</TL>
+                <TM>トルクメニスタン</TM>
+                <TN>チュニジア</TN>
+                <TO>トンガ</TO>
+                <TR>トルコ</TR>
+                <TT>トリニダード・トバゴ</TT>
+                <TV>ツバル</TV>
+                <TW>台湾</TW>
+                <TZ>タンザニア連合共和国</TZ>
+                <UA>ウクライナ</UA>
+                <UG>ウガンダ</UG>
+                <UM>その他の米領諸島</UM>
+                <US>米国</US>
+                <UY>ウルグアイ</UY>
+                <UZ>ウズベキスタン</UZ>
+                <VA>教皇庁 (バチカン市国)</VA>
+                <VC>セントビンセントおよびグレナディーン諸島</VC>
+                <VE>ベネズエラ・ボリバル共和国</VE>
+                <WF>ワリス・フテュナ諸島</WF>
+                <VG>英領バージン諸島</VG>
+                <VI>米領バージン諸島</VI>
+                <VN>ベトナム</VN>
+                <WS>サモア</WS>
+                <VU>バヌアツ</VU>
+                <YE>イエメン</YE>
+                <YT>マイヨット島</YT>
+                <ZA>南アフリカ</ZA>
+                <ZM>ザンビア</ZM>
+                <ZW>ジンバブエ</ZW>
+              </countries>
+              <country>国</country>
+              <description>訪問者の場所と指定された地理的位置を照合します。</description>
+              <displayname>地理的位置</displayname>
+              <mustselectcontinent>大陸を選択します</mustselectcontinent>
+              <region>地域</region>
+            </geographiclocation>
+            <numberofvisits>
+              <category>サイト基準</category>
+              <comparison>比較タイプ</comparison>
+              <description>訪問者が Web サイトを訪問した回数と照合します。</description>
+              <displayname>訪問数</displayname>
+              <fixtime>日付</fixtime>
+              <floattime>期間</floattime>
+              <required see="/shell/cms/visitorgroups/criteria/userprofile/required" />
+              <threshold>しきい値</threshold>
+              <thresholdtolargewarning>各訪問者について最新 10 回の訪問しか保存されていないため、特定の時間範囲で 10 回を超える訪問と比較することはできません。</thresholdtolargewarning>
+              <timeframe>時間枠</timeframe>
+            </numberofvisits>
+            <referrer>
+              <category>URL 基準</category>
+              <description>参照元の URL を指定された文字列と照合します。</description>
+              <displayname>参照元</displayname>
+            </referrer>
+            <required>値を選択してください。</required>
+            <searchwordreferrer>
+              <category>URL 基準</category>
+              <description>検索する単語を指定された文字列と照合します。</description>
+              <displayname>キーワードの検索</displayname>
+            </searchwordreferrer>
+            <starturl>
+              <category>URL 基準</category>
+              <description>訪問者が Web サイトでアクセスした URL と照合します。</description>
+              <displayname>ランディング URL</displayname>
+              <url>URL: </url>
+            </starturl>
+            <timeofday>
+              <bothornonetime>開始時刻と終了時刻の両方を設定するか、両方を空白のままにします。</bothornonetime>
+              <category>時間と場所の基準</category>
+              <daysofweek>曜日</daysofweek>
+              <description>指定された期間および曜日と照合します。</description>
+              <displayname>時刻</displayname>
+              <endtime>終了時刻:</endtime>
+              <friday>金曜日</friday>
+              <monday>月曜日</monday>
+              <nodayofweekselected>日を少なくとも 1 つ選択します。</nodayofweekselected>
+              <saturday>土曜日</saturday>
+              <starttime>開始時刻:</starttime>
+              <starttimeafterendtime>開始時刻が終了時刻より前になるように変更します。</starttimeafterendtime>
+              <sunday>日曜日</sunday>
+              <thursday>木曜日</thursday>
+              <tuesday>火曜日</tuesday>
+              <wednesday>水曜日</wednesday>
+            </timeofday>
+            <userprofile>
+              <category>サイト基準</category>
+              <description>指定された値でユーザー プロファイル プロパティの 1 つと照合します。</description>
+              <displayname>ユーザー プロファイル</displayname>
+              <key>
+                <address>アドレス</address>
+                <company>会社</company>
+                <email>電子メール アドレス</email>
+                <firstname>名</firstname>
+                <lastname>姓</lastname>
+                <title>タイトル</title>
+              </key>
+              <required>値を選択してください</required>
+            </userprofile>
+            <viewedpages>
+              <category>サイト基準</category>
+              <description>訪問者が指定されたページをいつ訪問したかと照合します。</description>
+              <displayname>訪問したページ</displayname>
+              <notvalidpagereference>選択されたページが見つかりませんでした</notvalidpagereference>
+            </viewedpages>
+            <visitorgroup>
+              <category>訪問者グループ</category>
+              <description>既存の訪問者グループのメンバシップと照合します。</description>
+              <displayname>訪問者グループのメンバシップ</displayname>
+              <foundcirclereference>この訪問者グループへの参照は循環参照になるため、別の訪問者グループを選択してください。</foundcirclereference>
+            </visitorgroup>
+          </criteria>
+          <edit>
+            <acceptrenaming>承諾</acceptrenaming>
+            <addtitle>訪問者グループの作成</addtitle>
+            <all>すべて</all>
+            <allof>次のすべて: </allof>
+            <any>任意の</any>
+            <anyof>次のいずれか: </anyof>
+            <cantchangename>この訪問者グループは、ページとファイルに対するアクセス権限の割り当てに使用されている可能性があります。 名前を変更すると、このグループに設定されているアクセス権限が機能しなくなります。</cantchangename>
+            <category>
+              <default>デフォルト</default>
+            </category>
+            <criteria>基準</criteria>
+            <drophint>新しい基準をここにドロップ</drophint>
+            <edittitle>訪問者グループの編集</edittitle>
+            <generalfields>その他の情報</generalfields>
+            <info>まず訪問者グループを作成し、そのグループを使用してページのコンテンツを対象化して、Web サイトのコンテンツを調整します。</info>
+            <issecurityrole>セキュリティ ロール</issecurityrole>
+            <issecurityroledescription>ページとファイルに対するアクセス権限を設定するときに、この訪問者グループを使用できるようにします。</issecurityroledescription>
+            <match>一致</match>
+            <name>名前</name>
+            <notes>注意</notes>
+            <points>
+              <required>必須</required>
+              <threshold>しきい値</threshold>
+              <title>ポイント</title>
+            </points>
+            <pointsfrom>次から最低 {0} ポイント: </pointsfrom>
+            <statistics>統計</statistics>
+            <statisticsdescription>この訪問者グループの統計を有効化</statisticsdescription>
+            <typenotfound>タイプ {0} をロードできませんでした</typenotfound>
+            <undorenaming>取り消し</undorenaming>
+          </edit>
+          <index>
+            <copy>コピー</copy>
+            <info>訪問者グループは、特定のターゲット グループに Web サイトを合わせるために使用します。</info>
+            <name>訪問者グループ</name>
+            <sessionstatewarning>このサイトはセッションの状態を使用するように構成されていません。これは訪問者グループの前提条件です。 詳細については、管理者に連絡してください。</sessionstatewarning>
+            <table>
+              <action>アクション</action>
+              <actions>
+                <copy>複製</copy>
+                <delete>削除</delete>
+                <edit>編集</edit>
+                <resetstatistics>統計のクリア</resetstatistics>
+              </actions>
+              <deleteconfirmation>この訪問者グループを削除しますか?</deleteconfirmation>
+              <name>名前</name>
+              <notes>注意</notes>
+              <resetstatisticsconfirmation>この訪問者グループの統計をクリアしますか?</resetstatisticsconfirmation>
+            </table>
+          </index>
+        </visitorgroups>
+        <xformsviewer>
+          <autoupdatelevel>
+            <never>更新しない</never>
+            <normal>中 (10 分ごと)</normal>
+            <often>高 (60 秒ごと)</often>
+            <seldom>低 (60 分ごと)</seldom>
+          </autoupdatelevel>
+          <AutoupdateLevel>自動更新</AutoupdateLevel>
+          <chartperiodicity>
+            <day>1 日ごと</day>
+            <hour>1 時間ごと</hour>
+            <minute>1 分ごと</minute>
+            <month>1 か月ごと</month>
+            <week>1 週間ごと</week>
+          </chartperiodicity>
+          <ChartPeriodicityLabel>グラフの周期性</ChartPeriodicityLabel>
+          <ChartSettings>グラフ設定</ChartSettings>
+          <DemoMode>デモ モード</DemoMode>
+          <error>
+            <fields>フィールドが選択されていません</fields>
+            <formfields>フォーム フィールドの選択</formfields>
+            <numberofposts>項目数は 1 ～ 50 の間の整数である必要があります。</numberofposts>
+            <xformid>フォームの選択</xformid>
+          </error>
+          <GadgetTitle>フォーム ビューア</GadgetTitle>
+          <NoFieldsAvailable>使用できるフィールドがありません</NoFieldsAvailable>
+          <NoFormsAvailable>使用できるフォームがありません</NoFormsAvailable>
+          <NumberOfPosts>表示する項目数</NumberOfPosts>
+          <SelectFields>表示するフィールド</SelectFields>
+          <SelectXForm>フォームの選択</SelectXForm>
+          <settings>設定</settings>
+          <ShowChart>グラフの表示</ShowChart>
+          <ShowDate>項目の投稿日を表示</ShowDate>
+          <TableColumnPostedTime>投稿日</TableColumnPostedTime>
+        </xformsviewer>
+      </cms>
+      <common>
+        <buttons>
+          <cancel>キャンセル</cancel>
+          <save>保存</save>
+        </buttons>
+      </common>
+    </shell>
+  </language>
+</languages>
