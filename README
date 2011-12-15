@@ -7,3 +7,6 @@ Project includes (to make life somewhat easier):
 - PageType Builder
 - SubSonic 
 
+/Releases Folder
+
+This contains the files that need just be copy and pasted into the root of an existing EPiServer Site.
